@@ -1,0 +1,29 @@
+{
+  "footer": {
+    "address": { "egypt": "Egypt", "germany": "Germany" },
+    "body": "Reach out to us today in the way that's most convenient for you. We're excited to hear from you and help you take your business to the next level!",
+    "bottomLine": "All rights reserved by wexcute OÜ.",
+    "form": {
+      "buttonText": "Send Request",
+      "email": "Email",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "textArea": "Enter Your Message",
+      "title": "Ready To Get Started"
+    },
+    "title": "Let’s Talk",
+    "workingHours": "Working Hours"
+  },
+  "header": {
+    "buttonText": "Let's Talk",
+    "pages": {
+      "blog": "Blog",
+      "company": "Company",
+      "faqs": "FAQs",
+      "home": "Home",
+      "projects": "Projects",
+      "services": "Services",
+      "contact_us": "Contact Us"
+    }
+  }
+}

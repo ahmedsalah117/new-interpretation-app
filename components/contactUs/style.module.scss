@@ -1,0 +1,72 @@
+.contact-us-section {
+  .contact-header {
+    background: linear-gradient(290deg, #03adb5 0%, #e41469 82.25%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .contact-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(290deg, #03adb5 0%, #e41469 82.25%);
+      border-radius: 16px 16px 0 0;
+    }
+  }
+
+  .contact-button {
+    background: linear-gradient(290deg, #03adb5 0%, #e41469 82.25%);
+    color: white;
+    border: none;
+
+    &:hover {
+      background: linear-gradient(290deg, #029aa1 0%, #c9125a 82.25%);
+      transform: translateY(-2px);
+    }
+  }
+
+  .contact-icon {
+    background: linear-gradient(290deg, #03adb5 0%, #e41469 82.25%);
+    color: white;
+    border-radius: 50%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-icon {
+    background: linear-gradient(290deg, #03adb5 0%, #e41469 82.25%);
+    color: white;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(290deg, #029aa1 0%, #c9125a 82.25%);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .contact-us-section {
+    .contact-card {
+      margin-bottom: 24px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.blog-section-title {
+  background: var(--Gradient-01, linear-gradient(143deg, #03adb5 0%, #e41469 82.25%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 34px;
+}
+
+.blog-post-body {
+  p {
+    font-size: 16px;
+  }
+
+  figure {
+    img {
+      height: auto;
+      object-fit: contain;
+      width: 100%;
+      border-radius: 24px;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+.section-container {
+  
+  .section-content {
+    
+    
+    .pricing-header {
+      background: -webkit-linear-gradient(290deg, #03adb5 0%, #e41469 82.25%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .pricing-card {
+      background-color: #ffffff;
+      border: 2px solid #DFE6F0;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+      position: relative;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      &.popular {
+        border-color: #03adb5;
+        box-shadow: 0 8px 32px rgba(3, 173, 181, 0.15);
+        transform: scale(1.05);
+
+        &:hover {
+          transform: scale(1.05) translateY(-4px);
+        }
+      }
+
+      .popular-badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(290deg, #03adb5 0%, #e41469 82.25%);
+        padding: 8px 16px;
+        border-radius: 20px;
+        z-index: 1;
+      }
+
+      .pricing-content {
+        .pricing-button {
+          &.popular {
+            background: linear-gradient(290deg, #03adb5 0%, #e41469 82.25%);
+            color: white;
+            border: none;
+
+            &:hover {
+              background: linear-gradient(290deg, #029aa1 0%, #c9125a 82.25%);
+            }
+          }
+
+          &:not(.popular) {
+            border-color: #03adb5;
+            color: #03adb5;
+
+            &:hover {
+              background-color: rgba(3, 173, 181, 0.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}

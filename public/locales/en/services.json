@@ -1,0 +1,29 @@
+{
+  "appDevelopment": {
+    "body": "Stay ahead with our app development services. We create seamless, user-friendly experiences that drive engagement and boost your digital presence.",
+    "title": "App Development"
+  },
+  "corporate": {
+    "body": "Empower your business with our custom corporate solutions. We offer smart IT solutions that streamline your operations, enhance productivity, and strengthen your digital infrastructure, enabling your organizations to scale with ease.",
+    "title": "Corporate Solutions"
+  },
+  "expertiseDimensions": {
+    "consulting": { "body": "We help you maximize your digital potential through consultation", "title": "Consulting & Advisory" },
+    "mobileApplications": { "body": "We build engaging mobile apps that capture attention.", "title": "Mobile Applications" },
+    "modules": { "body": "We develop custom extensions that enhance digital products.", "title": "Modules/Addons" },
+    "title": "Expertise Dimensions",
+    "vr": { "body": "Captivating VR solutions for training, marketing, and entertainment.", "title": "VR Solutions" },
+    "webApplications": { "body": "We develop custom web apps that streamline your business.", "title": "Web Applications" },
+    "webDesign": { "body": "We create stunning and user-friendly websites that convert.", "title": "Web Design" },
+    "webGames": { "body": "We create captivating web games that engage and entertain.", "title": "Web Games" }
+  },
+  "hero": { "title": "Building the future,\ntoday" },
+  "ourExpertise": {
+    "body": "At WeXcute, we offer a wide range of software development and app solutions, catering to the unique needs of startups, SMEs, and large corporations. Explore our comprehensive services below to discover how we can help your business thrive in the digital landscape.",
+    "title": "Our Expertise"
+  },
+  "startup": {
+    "body": "Transform your vision into reality with our tailored startup solutions. Our experienced team will guide you through every step of the digital product development process, ensuring your business hits the ground running.",
+    "title": "Startup Solutions"
+  }
+}

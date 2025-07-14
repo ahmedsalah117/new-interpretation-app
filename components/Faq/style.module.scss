@@ -1,0 +1,17 @@
+#faq-content {
+  width: 100%;
+
+  .MuiAccordion-root {
+    width: 100%;
+    border-radius: 20px;
+    padding: 8px 16px;
+
+    &::before {
+      display: none;
+    }
+
+    .MuiAccordionSummary-root {
+      min-height: 60px;
+    }
+  }
+}

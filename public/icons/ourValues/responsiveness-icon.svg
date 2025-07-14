@@ -1,0 +1,50 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="url(#responsivenessGradient)" stroke="url(#responsivenessGradient)" stroke-width="2"/>
+  
+  <!-- Lightning bolt for speed -->
+  <g transform="translate(32, 32)">
+    <path d="M -8 -12 L 4 -4 L -2 4 L 8 12 L -4 4 L 2 -4 Z" fill="white"/>
+  </g>
+  
+  <!-- Speed lines -->
+  <g transform="translate(8, 32)">
+    <path d="M 0 0 L 8 -4 L 16 0 L 8 4 Z" fill="white" opacity="0.6"/>
+  </g>
+  
+  <g transform="translate(40, 32)">
+    <path d="M 0 0 L 8 -4 L 16 0 L 8 4 Z" fill="white" opacity="0.6"/>
+  </g>
+  
+  <!-- Clock hands for responsiveness -->
+  <g transform="translate(32, 32)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="white" stroke-width="2" opacity="0.8"/>
+    <!-- Hour hand -->
+    <line x1="0" y1="0" x2="0" y2="-6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <!-- Minute hand -->
+    <line x1="0" y1="0" x2="8" y2="0" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="1" fill="white"/>
+  </g>
+  
+  <!-- Communication waves -->
+  <g transform="translate(16, 16)">
+    <circle cx="0" cy="0" r="3" fill="white" opacity="0.7"/>
+    <circle cx="0" cy="0" r="6" fill="none" stroke="white" stroke-width="1" opacity="0.5"/>
+    <circle cx="0" cy="0" r="9" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
+  </g>
+  
+  <g transform="translate(48, 48)">
+    <circle cx="0" cy="0" r="3" fill="white" opacity="0.7"/>
+    <circle cx="0" cy="0" r="6" fill="none" stroke="white" stroke-width="1" opacity="0.5"/>
+    <circle cx="0" cy="0" r="9" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
+  </g>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="responsivenessGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg> 
