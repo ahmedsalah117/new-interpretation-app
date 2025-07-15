@@ -5,6 +5,10 @@ import styles from './style.module.scss';
 import HeroCard from '@/components/Common/HeroCard/HeroCard';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import OurStory from "@/components/Company/OurStory/OurStory";
+
+import OurTeam from "@/components/Company/OurTeam/OurTeam";
+import OurValues from "@/components/Company/OurValues/OurValues";
 
 const Company = () => {
   const { t: translate } = useTranslation<any>();
@@ -13,14 +17,17 @@ const Company = () => {
     <>
       <HeroCard
         heroCardHeight="564px"
-        title={translate('company:hero:title')}
-        subtitle={translate('company:hero:subtitle') as string}
-        backgroundImageUrl={'/images/hero-image.png'}
+        title={translate("company:hero:title")}
+        subtitle={translate("company:hero:subtitle") as string}
+        backgroundImageUrl={"/images/hero-image.png"}
         hasButton={false}
       />
       <div className="company-page-wrapper">
-        <WhoWeAre />
-        <HowWeWork />
+        <OurStory />
+        <OurValues />
+        <OurTeam />
+        {/* <WhoWeAre /> */}
+        {/* <HowWeWork /> */}
       </div>
     </>
   );

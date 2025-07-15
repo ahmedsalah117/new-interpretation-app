@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import styles from './style.module.scss';
+import React, { useState } from "react";
 import {
   Box,
   Typography,
@@ -13,752 +12,495 @@ import {
   useMediaQuery,
   useTheme,
   Paper,
-  Alert,
   Snackbar,
-} from '@mui/material';
-import { 
-  Phone, 
-  Email, 
-  LocationOn, 
-  Chat, 
-  Twitter, 
-  YouTube, 
-  Facebook, 
+  Alert,
+  Container,
+  Fade,
+  Grow,
+  Card,
+  CardContent,
+  Avatar,
+} from "@mui/material";
+import {
+  Phone,
+  Email,
+  LocationOn,
+  Chat,
+  Twitter,
+  YouTube,
+  Facebook,
   LinkedIn,
   Send,
-  CheckCircle
-} from '@mui/icons-material';
+  CheckCircle,
+  Business,
+  Support,
+  Language,
+} from "@mui/icons-material";
 
 const inquiryTypes = [
-  { value: 'general', label: 'General Inquiry' },
-  { value: 'sales', label: 'Sales & Partnerships' },
-  { value: 'support', label: 'Technical Support' },
-  { value: 'interpretation', label: 'Interpretation Services' },
-  { value: 'other', label: 'Other' },
+  { value: "general", label: "General Inquiry", icon: Chat },
+  { value: "sales", label: "Sales & Partnerships", icon: Business },
+  { value: "support", label: "Technical Support", icon: Support },
+  { value: "interpretation", label: "Interpretation Services", icon: Language },
+  { value: "other", label: "Other", icon: Chat },
 ];
 
 const ContactUs = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    inquiryType: '',
-    message: '',
+    fullName: "",
+    email: "",
+    phone: "",
+    inquiryType: "",
+    message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleInputChange = (field: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: event.target.value
-    }));
-  };
+  const handleChange =
+    (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+      setFormData((prev) => ({ ...prev, [field]: e.target.value }));
+    };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
     setIsSubmitted(true);
     setShowSuccess(true);
-    
-    // Reset form after 3 seconds
+
     setTimeout(() => {
       setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        inquiryType: '',
-        message: '',
+        fullName: "",
+        email: "",
+        phone: "",
+        inquiryType: "",
+        message: "",
       });
       setIsSubmitted(false);
     }, 3000);
   };
 
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: "Phone",
+      items: [
+        { label: "Sales", value: "+1 (555) 123-4567" },
+        { label: "Support", value: "+1 (555) 987-6543" },
+      ],
+      color: "#03adb5",
+    },
+    {
+      icon: Email,
+      title: "Email",
+      items: [
+        { label: "General", value: "info@interpretai.com" },
+        { label: "Sales", value: "sales@interpretai.com" },
+        { label: "Support", value: "support@interpretai.com" },
+      ],
+      color: "#e41469",
+    },
+    {
+      icon: LocationOn,
+      title: "Locations",
+      items: [
+        {
+          label: "San Francisco (HQ)",
+          value: "123 Interpreter Street, CA 94102",
+        },
+        { label: "New York", value: "456 Language Avenue, NY 10001" },
+      ],
+      color: "#03adb5",
+    },
+  ];
+
+  const socialIcons = [
+    { icon: Twitter, color: "#1da1f2", href: "#" },
+    { icon: LinkedIn, color: "#0077b5", href: "#" },
+    { icon: YouTube, color: "#ff0000", href: "#" },
+    { icon: Facebook, color: "#1877f2", href: "#" },
+  ];
+
   return (
-    <Box 
-      sx={{ 
-        width: '100%', 
-        minHeight: '100vh',
-        background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%)',
-        position: 'relative',
-        overflow: 'hidden',
-        pt: '120px',
-        pb: '80px'
+    <Box
+      sx={{
+        background: "linear-gradient(135deg, #03adb5 0%, #e41469 100%)",
+        minHeight: "100vh",
+        py: 8,
+        position: "relative",
+        overflow: "hidden",
+        paddingTop: "150px",
       }}
     >
-      {/* Background Pattern */}
+      {/* Background decorative elements */}
       <Box
         sx={{
-          position: 'absolute',
+          position: "absolute",
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: 'url(/images/tile.png)',
-          backgroundSize: '200px 200px',
-          opacity: 0.1,
-          zIndex: 0,
-        }}
-      />
-      
-      {/* Gradient Overlay */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'linear-gradient(135deg, rgba(3, 173, 181, 0.05) 0%, rgba(228, 20, 105, 0.05) 100%)',
-          zIndex: 0,
+          background:
+            'url(\'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>\')',
+          opacity: 0.3,
         }}
       />
 
-      <Box 
-        className={styles["section-content"]} 
-        sx={{ 
-          position: 'relative',
-          zIndex: 1,
-          flexDirection: 'column', 
-          alignItems: 'center', 
-          gap: 4 
-        }}
-      >
-        {/* Header Section */}
-        <Stack spacing={3} alignItems="center" sx={{ mb: 6, textAlign: 'center' }}>
-          <Typography 
-            variant="h2" 
-            fontWeight={700} 
-            sx={{
-              background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
-              lineHeight: 1.2,
-            }}
-          >
-            Get in Touch
-          </Typography>
-          <Typography 
-            variant="h5" 
-            color="text.secondary" 
-            sx={{ 
-              maxWidth: 700,
-              fontSize: { xs: '1.1rem', md: '1.3rem' },
-              lineHeight: 1.6,
-            }}
-          >
-            Ready to break down language barriers? Our team of language service professionals is here to help you connect with the world.
-          </Typography>
-        </Stack>
-
-        <Grid container spacing={4} sx={{ width: '100%', mb: 6 }}>
-          {/* Contact Information Card */}
-          <Grid  columns={{xs: 12, lg: 4}}>
-            <Paper
-              elevation={0}
+      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+        <Fade in timeout={1000}>
+          <Stack spacing={6} alignItems="center" textAlign="center" mb={8}>
+            <Typography
+              variant="h2"
+              fontWeight={800}
               sx={{
-                background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
-                borderRadius: 4,
-                p: 4,
-                height: '100%',
-                border: '1px solid rgba(3, 173, 181, 0.1)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-4px)',
-                  boxShadow: '0 12px 40px rgba(0, 0, 0, 0.12)',
-                },
-                position: 'relative',
-                overflow: 'hidden',
+                color: "white",
+                textShadow: "0 4px 8px rgba(0,0,0,0.3)",
+                mb: 2,
               }}
             >
-              {/* Gradient Border */}
-              <Box
-                sx={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: '4px',
-                  background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                }}
-              />
-              
-              <Stack spacing={4}>
-                <Typography variant="h4" fontWeight={600} color="#232932">
-                  Contact Information
-                </Typography>
-                
-                {/* Phone Numbers */}
-                <Stack spacing={2}>
-                  <Typography variant="h6" fontWeight={600} color="#03adb5" gutterBottom>
-                    Phone Numbers
-                  </Typography>
-                  <Stack spacing={2}>
-                    <Stack direction="row" alignItems="center" spacing={2}>
-                      <Box
-                        sx={{
-                          p: 1,
-                          borderRadius: '50%',
-                          background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                        }}
-                      >
-                        <Phone sx={{ color: 'white', fontSize: '1.2rem' }} />
-                      </Box>
-                      <Box>
-                        <Typography fontWeight={500} color="#232932">Sales</Typography>
-                        <Typography color="text.secondary">+1 (555) 123-4567</Typography>
-                      </Box>
-                    </Stack>
-                    <Stack direction="row" alignItems="center" spacing={2}>
-                      <Box
-                        sx={{
-                          p: 1,
-                          borderRadius: '50%',
-                          background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                        }}
-                      >
-                        <Phone sx={{ color: 'white', fontSize: '1.2rem' }} />
-                      </Box>
-                      <Box>
-                        <Typography fontWeight={500} color="#232932">Support</Typography>
-                        <Typography color="text.secondary">+1 (555) 987-6543</Typography>
-                      </Box>
-                    </Stack>
-                  </Stack>
-                </Stack>
-
-                <Divider sx={{ borderColor: 'rgba(3, 173, 181, 0.2)' }} />
-
-                {/* Email Addresses */}
-                <Stack spacing={2}>
-                  <Typography variant="h6" fontWeight={600} color="#03adb5" gutterBottom>
-                    Email Addresses
-                  </Typography>
-                  <Stack spacing={2}>
-                    <Stack direction="row" alignItems="center" spacing={2}>
-                      <Box
-                        sx={{
-                          p: 1,
-                          borderRadius: '50%',
-                          background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                        }}
-                      >
-                        <Email sx={{ color: 'white', fontSize: '1.2rem' }} />
-                      </Box>
-                      <Box>
-                        <Typography fontWeight={500} color="#232932">General</Typography>
-                        <Typography color="text.secondary">info@interpretai.com</Typography>
-                      </Box>
-                    </Stack>
-                    <Stack direction="row" alignItems="center" spacing={2}>
-                      <Box
-                        sx={{
-                          p: 1,
-                          borderRadius: '50%',
-                          background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                        }}
-                      >
-                        <Email sx={{ color: 'white', fontSize: '1.2rem' }} />
-                      </Box>
-                      <Box>
-                        <Typography fontWeight={500} color="#232932">Sales</Typography>
-                        <Typography color="text.secondary">sales@interpretai.com</Typography>
-                      </Box>
-                    </Stack>
-                    <Stack direction="row" alignItems="center" spacing={2}>
-                      <Box
-                        sx={{
-                          p: 1,
-                          borderRadius: '50%',
-                          background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                        }}
-                      >
-                        <Email sx={{ color: 'white', fontSize: '1.2rem' }} />
-                      </Box>
-                      <Box>
-                        <Typography fontWeight={500} color="#232932">Support</Typography>
-                        <Typography color="text.secondary">support@interpretai.com</Typography>
-                      </Box>
-                    </Stack>
-                  </Stack>
-                </Stack>
-
-                <Divider sx={{ borderColor: 'rgba(3, 173, 181, 0.2)' }} />
-
-                {/* Office Locations */}
-                <Stack spacing={2}>
-                  <Typography variant="h6" fontWeight={600} color="#03adb5" gutterBottom>
-                    Office Locations
-                  </Typography>
-                  <Stack spacing={2}>
-                    <Stack direction="row" alignItems="flex-start" spacing={2}>
-                      <Box
-                        sx={{
-                          p: 1,
-                          borderRadius: '50%',
-                          background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          mt: '2px',
-                        }}
-                      >
-                        <LocationOn sx={{ color: 'white', fontSize: '1.2rem' }} />
-                      </Box>
-                      <Box>
-                        <Typography fontWeight={500} color="#232932">San Francisco (HQ)</Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          123 Interpreter Street, San Francisco, CA 94102
-                        </Typography>
-                      </Box>
-                    </Stack>
-                    <Stack direction="row" alignItems="flex-start" spacing={2}>
-                      <Box
-                        sx={{
-                          p: 1,
-                          borderRadius: '50%',
-                          background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          mt: '2px',
-                        }}
-                      >
-                        <LocationOn sx={{ color: 'white', fontSize: '1.2rem' }} />
-                      </Box>
-                      <Box>
-                        <Typography fontWeight={500} color="#232932">New York</Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          456 Language Avenue, New York, NY 10001
-                        </Typography>
-                      </Box>
-                    </Stack>
-                  </Stack>
-                </Stack>
-
-                <Divider sx={{ borderColor: 'rgba(3, 173, 181, 0.2)' }} />
-
-                {/* Live Chat */}
-                <Stack spacing={2}>
-                  <Typography variant="h6" fontWeight={600} color="#03adb5" gutterBottom>
-                    Live Support
-                  </Typography>
-                  <Stack direction="row" alignItems="flex-start" spacing={2}>
-                    <Box
-                      sx={{
-                        p: 1,
-                        borderRadius: '50%',
-                        background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        mt: '2px',
-                      }}
-                    >
-                      <Chat sx={{ color: 'white', fontSize: '1.2rem' }} />
-                    </Box>
-                    <Box>
-                      <Typography fontWeight={500} color="#232932">Live Chat</Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Available Monday-Friday, 9am-5pm PT
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Use the chat button in the bottom-right corner
-                      </Typography>
-                    </Box>
-                  </Stack>
-                </Stack>
-
-                <Divider sx={{ borderColor: 'rgba(3, 173, 181, 0.2)' }} />
-
-                {/* Social Media */}
-                <Stack spacing={2}>
-                  <Typography variant="h6" fontWeight={600} color="#03adb5" gutterBottom>
-                    Follow Us
-                  </Typography>
-                  <Stack direction="row" spacing={1}>
-                    <IconButton 
-                      sx={{
-                        p: 1.5,
-                        background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                        color: 'white',
-                        '&:hover': {
-                          background: 'linear-gradient(290deg, #029aa1 0%, #c9125a 82.25%)',
-                          transform: 'translateY(-2px)',
-                        },
-                        transition: 'all 0.3s ease',
-                      }}
-                      href="https://twitter.com" 
-                      target="_blank"
-                    >
-                      <Twitter />
-                    </IconButton>
-                    <IconButton 
-                      sx={{
-                        p: 1.5,
-                        background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                        color: 'white',
-                        '&:hover': {
-                          background: 'linear-gradient(290deg, #029aa1 0%, #c9125a 82.25%)',
-                          transform: 'translateY(-2px)',
-                        },
-                        transition: 'all 0.3s ease',
-                      }}
-                      href="https://linkedin.com" 
-                      target="_blank"
-                    >
-                      <LinkedIn />
-                    </IconButton>
-                    <IconButton 
-                      sx={{
-                        p: 1.5,
-                        background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                        color: 'white',
-                        '&:hover': {
-                          background: 'linear-gradient(290deg, #029aa1 0%, #c9125a 82.25%)',
-                          transform: 'translateY(-2px)',
-                        },
-                        transition: 'all 0.3s ease',
-                      }}
-                      href="https://youtube.com" 
-                      target="_blank"
-                    >
-                      <YouTube />
-                    </IconButton>
-                    <IconButton 
-                      sx={{
-                        p: 1.5,
-                        background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                        color: 'white',
-                        '&:hover': {
-                          background: 'linear-gradient(290deg, #029aa1 0%, #c9125a 82.25%)',
-                          transform: 'translateY(-2px)',
-                        },
-                        transition: 'all 0.3s ease',
-                      }}
-                      href="https://facebook.com" 
-                      target="_blank"
-                    >
-                      <Facebook />
-                    </IconButton>
-                  </Stack>
-                </Stack>
-              </Stack>
-            </Paper>
-          </Grid>
-
-          {/* Contact Form Card */}
-              <Grid columns={{xs: 12, lg: 8}}>
-            <Paper
-              elevation={0}
+              Get in Touch
+            </Typography>
+            <Typography
+              variant="h5"
               sx={{
-                background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
-                borderRadius: 4,
-                p: 4,
-                border: '1px solid rgba(3, 173, 181, 0.1)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-4px)',
-                  boxShadow: '0 12px 40px rgba(0, 0, 0, 0.12)',
-                },
-                position: 'relative',
-                overflow: 'hidden',
+                color: "rgba(255,255,255,0.9)",
+                maxWidth: 700,
+                textShadow: "0 2px 4px rgba(0,0,0,0.2)",
               }}
             >
-              {/* Gradient Border */}
-              <Box
-                sx={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: '4px',
-                  background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                }}
-              />
+              Ready to break down language barriers? Our team is here to help
+              you connect with the world.
+            </Typography>
+          </Stack>
+        </Fade>
 
-              <Stack spacing={4}>
-                <Typography variant="h4" fontWeight={600} color="#232932">
-                  Send Us a Message
-                </Typography>
-                
-                {isSubmitted && (
-                  <Alert 
-                    severity="success" 
-                    icon={<CheckCircle />}
+        <Grid container spacing={4}>
+          {/* Contact Information Cards */}
+          <Grid size={{ xs: 12, lg: 4 }}>
+            <Stack spacing={3}>
+              {contactInfo.map((info, index) => (
+                <Grow in timeout={800 + index * 200} key={info.title}>
+                  <Card
                     sx={{
-                      background: 'rgba(3, 173, 181, 0.1)',
-                      border: '1px solid rgba(3, 173, 181, 0.3)',
-                      color: '#03adb5',
+                      background: "rgba(255,255,255,0.95)",
+                      backdropFilter: "blur(10px)",
+                      borderRadius: 4,
+                      boxShadow: "0 8px 32px rgba(0,0,0,0.1)",
+                      border: "1px solid rgba(255,255,255,0.2)",
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        transform: "translateY(-4px)",
+                        boxShadow: "0 12px 40px rgba(0,0,0,0.15)",
+                      },
                     }}
                   >
-                    Thank you for your message! We'll get back to you within 24 hours.
-                  </Alert>
-                )}
-
-                <form onSubmit={handleSubmit}>
-                  <Grid container spacing={3}>
-                    <Grid columns={{xs: 12, sm: 6}}>
-                      <TextField
-                        label="Full Name"
-                        name="fullName"
-                        value={formData.fullName}
-                        onChange={handleInputChange('fullName')}
-                        required
-                        fullWidth
-                        sx={{
-                          '& .MuiOutlinedInput-root': {
-                            '& fieldset': {
-                              borderColor: 'rgba(3, 173, 181, 0.3)',
-                            },
-                            '&:hover fieldset': {
-                              borderColor: 'rgba(3, 173, 181, 0.5)',
-                            },
-                            '&.Mui-focused fieldset': {
-                              borderColor: '#03adb5',
-                            },
-                          },
-                        }}
-                      />
-                    </Grid>
-                    <Grid columns={{xs: 12, sm: 6}}>
-                      <TextField
-                        label="Email Address"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleInputChange('email')}
-                        required
-                        fullWidth
-                        sx={{
-                          '& .MuiOutlinedInput-root': {
-                            '& fieldset': {
-                              borderColor: 'rgba(3, 173, 181, 0.3)',
-                            },
-                            '&:hover fieldset': {
-                              borderColor: 'rgba(3, 173, 181, 0.5)',
-                            },
-                            '&.Mui-focused fieldset': {
-                              borderColor: '#03adb5',
-                            },
-                          },
-                        }}
-                      />
-                    </Grid>
-                    <Grid columns={{xs: 12, sm: 6}}>
-                      <TextField
-                        label="Phone Number"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange('phone')}
-                        fullWidth
-                        sx={{
-                          '& .MuiOutlinedInput-root': {
-                            '& fieldset': {
-                              borderColor: 'rgba(3, 173, 181, 0.3)',
-                            },
-                            '&:hover fieldset': {
-                              borderColor: 'rgba(3, 173, 181, 0.5)',
-                            },
-                            '&.Mui-focused fieldset': {
-                              borderColor: '#03adb5',
-                            },
-                          },
-                        }}
-                      />
-                    </Grid>
-                    <Grid columns={{xs: 12, sm: 6}}>
-                      <TextField
-                        select
-                        label="Inquiry Type"
-                        name="inquiryType"
-                        value={formData.inquiryType}
-                        onChange={handleInputChange('inquiryType')}
-                        required
-                        fullWidth
-                        sx={{
-                          '& .MuiOutlinedInput-root': {
-                            '& fieldset': {
-                              borderColor: 'rgba(3, 173, 181, 0.3)',
-                            },
-                            '&:hover fieldset': {
-                              borderColor: 'rgba(3, 173, 181, 0.5)',
-                            },
-                            '&.Mui-focused fieldset': {
-                              borderColor: '#03adb5',
-                            },
-                          },
-                        }}
+                    <CardContent sx={{ p: 3 }}>
+                      <Stack
+                        direction="row"
+                        alignItems="center"
+                        spacing={2}
+                        mb={2}
                       >
-                        <MenuItem value="" disabled>Select inquiry type</MenuItem>
-                        {inquiryTypes.map((option) => (
-                          <MenuItem key={option.value} value={option.value}>
-                            {option.label}
-                          </MenuItem>
+                        <Avatar
+                          sx={{
+                            bgcolor: info.color,
+                            width: 48,
+                            height: 48,
+                          }}
+                        >
+                          <info.icon />
+                        </Avatar>
+                        <Typography
+                          variant="h6"
+                          fontWeight={600}
+                          color="text.primary"
+                        >
+                          {info.title}
+                        </Typography>
+                      </Stack>
+                      <Stack spacing={1}>
+                        {info.items.map((item, idx) => (
+                          <Box key={idx}>
+                            <Typography
+                              variant="subtitle2"
+                              fontWeight={600}
+                              color="text.secondary"
+                            >
+                              {item.label}
+                            </Typography>
+                            <Typography variant="body2" color="text.primary">
+                              {item.value}
+                            </Typography>
+                          </Box>
                         ))}
-                      </TextField>
-                    </Grid>
-                    <Grid columns={{xs: 12}}>
-                      <TextField
-                        label="Message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange('message')}
-                        required
-                        fullWidth
-                        multiline
-                        minRows={5}
-                        placeholder="Tell us about your interpretation needs..."
-                        sx={{
-                          '& .MuiOutlinedInput-root': {
-                            '& fieldset': {
-                              borderColor: 'rgba(3, 173, 181, 0.3)',
-                            },
-                            '&:hover fieldset': {
-                              borderColor: 'rgba(3, 173, 181, 0.5)',
-                            },
-                            '&.Mui-focused fieldset': {
-                              borderColor: '#03adb5',
-                            },
-                          },
-                        }}
-                      />
-                    </Grid>
-                    <Grid columns={{xs: 12}}>
-                      <Button
-                        variant="contained"
-                        size="large"
-                        type="submit"
-                        endIcon={<Send />}
-                        disabled={isSubmitted}
-                        sx={{
-                          px: 4,
-                          py: 1.5,
-                          borderRadius: 3,
-                          fontSize: '1.1rem',
-                          fontWeight: 600,
-                          background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-                          boxShadow: '0 4px 16px rgba(3, 173, 181, 0.3)',
-                          '&:hover': {
-                            background: 'linear-gradient(290deg, #029aa1 0%, #c9125a 82.25%)',
-                            boxShadow: '0 6px 20px rgba(3, 173, 181, 0.4)',
-                            transform: 'translateY(-2px)',
-                          },
-                          '&:disabled': {
-                            background: 'rgba(3, 173, 181, 0.3)',
-                            color: 'rgba(255, 255, 255, 0.7)',
-                          },
-                          transition: 'all 0.3s ease',
-                        }}
-                      >
-                        {isSubmitted ? 'Message Sent!' : 'Send Message'}
-                      </Button>
-                    </Grid>
-                  </Grid>
-                </form>
+                      </Stack>
+                    </CardContent>
+                  </Card>
+                </Grow>
+              ))}
 
-                <Typography 
-                  variant="caption" 
-                  color="text.secondary" 
-                  sx={{ 
-                    textAlign: 'center',
-                    fontSize: '0.875rem',
-                    lineHeight: 1.5,
+              {/* Social Media */}
+              <Grow in timeout={1400}>
+                <Card
+                  sx={{
+                    background: "rgba(255,255,255,0.95)",
+                    backdropFilter: "blur(10px)",
+                    borderRadius: 4,
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.1)",
+                    border: "1px solid rgba(255,255,255,0.2)",
                   }}
                 >
-                  By submitting this form, you agree to our privacy policy. 
-                  We respect your privacy and will never share your information with third parties.
-                </Typography>
-              </Stack>
-            </Paper>
+                  <CardContent sx={{ p: 3, textAlign: "center" }}>
+                    <Typography variant="h6" fontWeight={600} mb={2}>
+                      Follow Us
+                    </Typography>
+                    <Stack direction="row" spacing={2} justifyContent="center">
+                      {socialIcons.map((social, index) => (
+                        <IconButton
+                          key={index}
+                          sx={{
+                            bgcolor: social.color,
+                            color: "white",
+                            width: 48,
+                            height: 48,
+                            transition: "all 0.3s ease",
+                            "&:hover": {
+                              bgcolor: social.color,
+                              transform: "scale(1.1)",
+                              boxShadow: `0 4px 12px ${social.color}40`,
+                            },
+                          }}
+                          href={social.href}
+                          target="_blank"
+                        >
+                          <social.icon />
+                        </IconButton>
+                      ))}
+                    </Stack>
+                  </CardContent>
+                </Card>
+              </Grow>
+            </Stack>
+          </Grid>
+
+          {/* Contact Form */}
+          <Grid size={{ xs: 12, lg: 8 }}>
+            <Grow in timeout={600}>
+              <Card
+                sx={{
+                  background: "rgba(255,255,255,0.95)",
+                  backdropFilter: "blur(10px)",
+                  borderRadius: 4,
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.1)",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  height: "fit-content",
+                }}
+              >
+                <CardContent sx={{ p: 4 }}>
+                  <Typography
+                    variant="h4"
+                    fontWeight={700}
+                    gutterBottom
+                    sx={{
+                      background:
+                        "linear-gradient(143deg, #03adb5 0%, #e41469 82.25%)",
+                      backgroundClip: "text",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      mb: 3,
+                    }}
+                  >
+                    Send Us a Message
+                  </Typography>
+
+                  {isSubmitted && (
+                    <Alert
+                      severity="success"
+                      icon={<CheckCircle />}
+                      sx={{
+                        mb: 3,
+                        borderRadius: 2,
+                        background: "rgba(76, 175, 80, 0.1)",
+                        border: "1px solid rgba(76, 175, 80, 0.3)",
+                      }}
+                    >
+                      Thank you! We'll respond within 24 hours.
+                    </Alert>
+                  )}
+
+                  <Box component="form" onSubmit={handleSubmit} noValidate>
+                    <Grid container spacing={3}>
+                      <Grid size={{ xs: 12, sm: 6 }}>
+                        <TextField
+                          label="Full Name"
+                          value={formData.fullName}
+                          onChange={handleChange("fullName")}
+                          fullWidth
+                          required
+                          sx={{
+                            "& .MuiOutlinedInput-root": {
+                              borderRadius: 2,
+                              "&:hover fieldset": {
+                                borderColor: "#03adb5",
+                              },
+                              "&.Mui-focused fieldset": {
+                                borderColor: "#03adb5",
+                              },
+                            },
+                          }}
+                        />
+                      </Grid>
+                      <Grid size={{ xs: 12, sm: 6 }}>
+                        <TextField
+                          label="Email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleChange("email")}
+                          fullWidth
+                          required
+                          sx={{
+                            "& .MuiOutlinedInput-root": {
+                              borderRadius: 2,
+                              "&:hover fieldset": {
+                                borderColor: "#03adb5",
+                              },
+                              "&.Mui-focused fieldset": {
+                                borderColor: "#03adb5",
+                              },
+                            },
+                          }}
+                        />
+                      </Grid>
+                      <Grid size={{ xs: 12, sm: 6 }}>
+                        <TextField
+                          label="Phone"
+                          value={formData.phone}
+                          onChange={handleChange("phone")}
+                          fullWidth
+                          sx={{
+                            "& .MuiOutlinedInput-root": {
+                              borderRadius: 2,
+                              "&:hover fieldset": {
+                                borderColor: "#03adb5",
+                              },
+                              "&.Mui-focused fieldset": {
+                                borderColor: "#03adb5",
+                              },
+                            },
+                          }}
+                        />
+                      </Grid>
+                      <Grid size={{ xs: 12, sm: 6 }}>
+                        <TextField
+                          select
+                          label="Inquiry Type"
+                          value={formData.inquiryType}
+                          onChange={handleChange("inquiryType")}
+                          fullWidth
+                          required
+                          sx={{
+                            "& .MuiOutlinedInput-root": {
+                              borderRadius: 2,
+                              "&:hover fieldset": {
+                                borderColor: "#03adb5",
+                              },
+                              "&.Mui-focused fieldset": {
+                                borderColor: "#03adb5",
+                              },
+                            },
+                          }}
+                        >
+                          <MenuItem value="" disabled>
+                            Select inquiry type
+                          </MenuItem>
+                          {inquiryTypes.map((opt) => (
+                            <MenuItem key={opt.value} value={opt.value}>
+                              <Stack
+                                direction="row"
+                                spacing={1}
+                                alignItems="center"
+                              >
+                                <opt.icon sx={{ fontSize: 20 }} />
+                                <span>{opt.label}</span>
+                              </Stack>
+                            </MenuItem>
+                          ))}
+                        </TextField>
+                      </Grid>
+                      <Grid size={{ xs: 12 }}>
+                        <TextField
+                          label="Message"
+                          value={formData.message}
+                          onChange={handleChange("message")}
+                          multiline
+                          rows={5}
+                          fullWidth
+                          required
+                          sx={{
+                            "& .MuiOutlinedInput-root": {
+                              borderRadius: 2,
+                              "&:hover fieldset": {
+                                borderColor: "#03adb5",
+                              },
+                              "&.Mui-focused fieldset": {
+                                borderColor: "#03adb5",
+                              },
+                            },
+                          }}
+                        />
+                      </Grid>
+                      <Grid size={{ xs: 12 }}>
+                        <Button
+                          type="submit"
+                          variant="contained"
+                          endIcon={<Send />}
+                          disabled={isSubmitted}
+                          sx={{
+                            minWidth: 200,
+                            height: 56,
+                            borderRadius: 3,
+                            background:
+                              "linear-gradient(143deg, #03adb5 0%, #e41469 82.25%)",
+                            boxShadow: "0 4px 15px rgba(3, 173, 181, 0.4)",
+                            transition: "all 0.3s ease",
+                            "&:hover": {
+                              background:
+                                "linear-gradient(143deg, #0299a1 0%, #d0125a 82.25%)",
+                              boxShadow: "0 6px 20px rgba(3, 173, 181, 0.6)",
+                              transform: "translateY(-2px)",
+                            },
+                            "&:disabled": {
+                              background: "rgba(0,0,0,0.12)",
+                              color: "rgba(0,0,0,0.38)",
+                            },
+                          }}
+                        >
+                          {isSubmitted ? "Message Sent!" : "Send Message"}
+                        </Button>
+                      </Grid>
+                    </Grid>
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grow>
           </Grid>
         </Grid>
+      </Container>
 
-        {/* Map Section */}
-        <Paper
-          elevation={0}
-          sx={{
-            width: '100%',
-            background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
-            borderRadius: 4,
-            p: 6,
-            border: '1px solid rgba(3, 173, 181, 0.1)',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
-            position: 'relative',
-            overflow: 'hidden',
-          }}
-        >
-          {/* Gradient Border */}
-          <Box
-            sx={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              height: '4px',
-              background: 'linear-gradient(290deg, #03adb5 0%, #e41469 82.25%)',
-            }}
-          />
-          
-          <Stack spacing={3} alignItems="center">
-            <Typography variant="h4" fontWeight={600} color="#232932">
-              Find Us
-            </Typography>
-            <Typography variant="body1" color="text.secondary" textAlign="center">
-              Visit our offices or explore our global presence
-            </Typography>
-            <Box
-              sx={{
-                width: '100%',
-                height: 300,
-                background: 'linear-gradient(135deg, #f0f1f3 0%, #e9ecef 100%)',
-                borderRadius: 3,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                border: '2px dashed rgba(3, 173, 181, 0.3)',
-                color: '#666',
-                fontSize: '1.2rem',
-                fontWeight: 500,
-              }}
-            >
-              Interactive Map Coming Soon
-            </Box>
-          </Stack>
-        </Paper>
-      </Box>
-
-      {/* Success Snackbar */}
       <Snackbar
         open={showSuccess}
         autoHideDuration={6000}
         onClose={() => setShowSuccess(false)}
-        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
-        <Alert 
-          onClose={() => setShowSuccess(false)} 
-          severity="success" 
-          sx={{ width: '100%' }}
+        <Alert
+          onClose={() => setShowSuccess(false)}
+          severity="success"
+          sx={{
+            width: "100%",
+            borderRadius: 2,
+            boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+          }}
         >
           Message sent successfully! We'll get back to you soon.
         </Alert>

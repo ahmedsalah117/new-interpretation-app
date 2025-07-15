@@ -51,29 +51,33 @@ const FooterCopy = () => {
     <Box
       id="footer"
       sx={{
-        alignItems: 'center',
-        paddingTop: { xs: '40px', sm: isContactUsPage ? '0' : '0' },
+        alignItems: "center",
+        paddingTop: { xs: "40px", sm: isContactUsPage ? "0" : "0" },
         backgroundImage: `url(${backgroundImageUrl})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        borderRadius: { xs: '40px 40px 0px 0px', sm: '80px 80px 0px 0px', lg: '100px 100px 0px 0px' },
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        borderRadius: {
+          // xs: "40px 40px 0px 0px",
+          // sm: "80px 80px 0px 0px",
+          // lg: "100px 100px 0px 0px",
+        },
       }}
     >
       {!isContactUsPage && !isBlogPage && !isBlogPostPage && <FooterFormCopy />}
 
       {/* Footer Links Section */}
-      <Box sx={{ paddingX: { xs: '24px', md: '48px' }, paddingY: '60px' }}>
+      <Box sx={{ paddingX: { xs: "24px", md: "48px" }, paddingY: "60px" }}>
         <Grid container spacing={4}>
           {/* Company Links */}
-          <Grid columns={{xs: 12, sm: 6, md: 3}}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Stack spacing={3}>
               <Typography
                 variant="h6"
                 sx={{
-                  color: 'white',
+                  color: "white",
                   fontWeight: 700,
-                  fontSize: '18px',
-                  marginBottom: '16px',
+                  fontSize: "18px",
+                  marginBottom: "16px",
                 }}
               >
                 Company
@@ -84,13 +88,13 @@ const FooterCopy = () => {
                     key={link.name}
                     href={link.href}
                     sx={{
-                      color: 'rgba(255, 255, 255, 0.8)',
-                      textDecoration: 'none',
-                      fontSize: '16px',
+                      color: "rgba(255, 255, 255, 0.8)",
+                      textDecoration: "none",
+                      fontSize: "16px",
                       fontWeight: 400,
-                      '&:hover': {
-                        color: 'white',
-                        textDecoration: 'underline',
+                      "&:hover": {
+                        color: "white",
+                        textDecoration: "underline",
                       },
                     }}
                   >
@@ -102,15 +106,15 @@ const FooterCopy = () => {
           </Grid>
 
           {/* Support Links */}
-          <Grid columns={{xs: 12, sm: 6, md: 3}}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Stack spacing={3}>
               <Typography
                 variant="h6"
                 sx={{
-                  color: 'white',
+                  color: "white",
                   fontWeight: 700,
-                  fontSize: '18px',
-                  marginBottom: '16px',
+                  fontSize: "18px",
+                  marginBottom: "16px",
                 }}
               >
                 Support
@@ -121,13 +125,13 @@ const FooterCopy = () => {
                     key={link.name}
                     href={link.href}
                     sx={{
-                      color: 'rgba(255, 255, 255, 0.8)',
-                      textDecoration: 'none',
-                      fontSize: '16px',
+                      color: "rgba(255, 255, 255, 0.8)",
+                      textDecoration: "none",
+                      fontSize: "16px",
                       fontWeight: 400,
-                      '&:hover': {
-                        color: 'white',
-                        textDecoration: 'underline',
+                      "&:hover": {
+                        color: "white",
+                        textDecoration: "underline",
                       },
                     }}
                   >
@@ -139,15 +143,15 @@ const FooterCopy = () => {
           </Grid>
 
           {/* Services Links */}
-          <Grid columns={{xs: 12, sm: 6, md: 3}}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Stack spacing={3}>
               <Typography
                 variant="h6"
                 sx={{
-                  color: 'white',
+                  color: "white",
                   fontWeight: 700,
-                  fontSize: '18px',
-                  marginBottom: '16px',
+                  fontSize: "18px",
+                  marginBottom: "16px",
                 }}
               >
                 Services
@@ -158,13 +162,13 @@ const FooterCopy = () => {
                     key={link.name}
                     href={link.href}
                     sx={{
-                      color: 'rgba(255, 255, 255, 0.8)',
-                      textDecoration: 'none',
-                      fontSize: '16px',
+                      color: "rgba(255, 255, 255, 0.8)",
+                      textDecoration: "none",
+                      fontSize: "16px",
                       fontWeight: 400,
-                      '&:hover': {
-                        color: 'white',
-                        textDecoration: 'underline',
+                      "&:hover": {
+                        color: "white",
+                        textDecoration: "underline",
                       },
                     }}
                   >
@@ -176,15 +180,15 @@ const FooterCopy = () => {
           </Grid>
 
           {/* Social Media Links */}
-          <Grid columns={{xs: 12, sm: 6, md: 3}}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Stack spacing={3}>
               <Typography
                 variant="h6"
                 sx={{
-                  color: 'white',
+                  color: "white",
                   fontWeight: 700,
-                  fontSize: '18px',
-                  marginBottom: '16px',
+                  fontSize: "18px",
+                  marginBottom: "16px",
                 }}
               >
                 Follow Us
@@ -197,23 +201,23 @@ const FooterCopy = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '50%',
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                      color: 'white',
-                      textDecoration: 'none',
-                      transition: 'all 0.3s ease',
-                      '&:hover': {
-                        backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                        transform: 'translateY(-2px)',
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+                      backgroundColor: "rgba(255, 255, 255, 0.1)",
+                      color: "white",
+                      textDecoration: "none",
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        backgroundColor: "rgba(255, 255, 255, 0.2)",
+                        transform: "translateY(-2px)",
                       },
                     }}
                   >
-                    <social.icon sx={{ fontSize: '20px' }} />
+                    <social.icon sx={{ fontSize: "20px" }} />
                   </Link>
                 ))}
               </Stack>
@@ -225,39 +229,39 @@ const FooterCopy = () => {
       {/* Copyright Section */}
       <Box
         sx={{
-          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-          paddingX: { xs: '24px', md: '48px' },
-          paddingY: '32px',
+          borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+          paddingX: { xs: "24px", md: "48px" },
+          paddingY: "32px",
         }}
       >
         <Stack
-          direction={{ xs: 'column', md: 'row' }}
+          direction={{ xs: "column", md: "row" }}
           alignItems="center"
           justifyContent="space-between"
           spacing={2}
         >
           <Typography
             sx={{
-              color: 'rgba(255, 255, 255, 0.8)',
-              fontSize: '14px',
+              color: "rgba(255, 255, 255, 0.8)",
+              fontSize: "14px",
               fontWeight: 400,
-              textAlign: { xs: 'center', md: 'left' },
+              textAlign: { xs: "center", md: "left" },
             }}
           >
             © {currentYear} Wexcute. {translate(`common:footer:bottomLine`)}
           </Typography>
-          
+
           <Stack direction="row" spacing={3}>
             <Link
               href="/terms"
               sx={{
-                color: 'rgba(255, 255, 255, 0.8)',
-                textDecoration: 'none',
-                fontSize: '14px',
+                color: "rgba(255, 255, 255, 0.8)",
+                textDecoration: "none",
+                fontSize: "14px",
                 fontWeight: 400,
-                '&:hover': {
-                  color: 'white',
-                  textDecoration: 'underline',
+                "&:hover": {
+                  color: "white",
+                  textDecoration: "underline",
                 },
               }}
             >
@@ -266,13 +270,13 @@ const FooterCopy = () => {
             <Link
               href="/privacy"
               sx={{
-                color: 'rgba(255, 255, 255, 0.8)',
-                textDecoration: 'none',
-                fontSize: '14px',
+                color: "rgba(255, 255, 255, 0.8)",
+                textDecoration: "none",
+                fontSize: "14px",
                 fontWeight: 400,
-                '&:hover': {
-                  color: 'white',
-                  textDecoration: 'underline',
+                "&:hover": {
+                  color: "white",
+                  textDecoration: "underline",
                 },
               }}
             >

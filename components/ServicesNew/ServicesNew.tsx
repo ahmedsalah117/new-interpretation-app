@@ -76,17 +76,21 @@ const ServicesNew = () => {
   };
 
   return (
-    <Stack className={styles['section-container']}>
-      <Stack className={styles['section-content']} spacing="120px">
+    <Stack className={"section-container"}>
+      <Stack className={"section-content"} spacing="120px">
         {/* Our Services Section */}
         <Stack spacing="80px" maxWidth="1200px" width="100%" pt="60px">
-          <Stack direction={{ xs: 'column' }} alignItems={{ xs: 'flex-start', lg: 'center' }} spacing={{ xs: 3, lg: '40px' }}>
+          <Stack
+            direction={{ xs: "column" }}
+            alignItems={{ xs: "flex-start", lg: "center" }}
+            spacing={{ xs: 3, lg: "40px" }}
+          >
             <Typography
-              fontSize={{ xs: '32px', lg: '48px' }}
+              fontSize={{ xs: "32px", lg: "48px" }}
               lineHeight="60px"
               fontWeight={700}
-              className={styles['services-header']}
-              maxWidth={{ xs: '100%', lg: '400px' }}
+              className={styles["services-header"]}
+              maxWidth={{ xs: "100%", lg: "400px" }}
             >
               Our Services
             </Typography>
@@ -96,15 +100,22 @@ const ServicesNew = () => {
               fontWeight={400}
               lineHeight="32px"
               color="#666666"
-              maxWidth={{ xs: '100%', lg: '800px' }}
-              textAlign={'center'}
+              maxWidth={{ xs: "100%", lg: "800px" }}
+              textAlign={"center"}
             >
-              We provide comprehensive interpretation and translation services to break down language barriers and facilitate clear
-              communication across diverse industries and settings.
+              We provide comprehensive interpretation and translation services
+              to break down language barriers and facilitate clear communication
+              across diverse industries and settings.
             </Typography>
           </Stack>
 
-          <Stack direction="row" flexWrap="wrap" justifyContent="space-between" gap="22px" maxWidth="1200px">
+          <Stack
+            direction="row"
+            flexWrap="wrap"
+            justifyContent="space-between"
+            gap="22px"
+            maxWidth="1200px"
+          >
             {SERVICES.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -120,18 +131,40 @@ const ServicesNew = () => {
         {/* Our Interpretation Process Section */}
         <Stack spacing="80px" maxWidth="1200px" width="100%">
           <Stack spacing="24px" alignItems="center" textAlign="center">
-            <Typography fontSize={{ xs: '32px', lg: '48px' }} lineHeight="60px" fontWeight={700} className={styles['process-header']}>
+            <Typography
+              fontSize={{ xs: "32px", lg: "48px" }}
+              lineHeight="60px"
+              fontWeight={700}
+              className={styles["process-header"]}
+            >
               Our Interpretation Process
             </Typography>
 
-            <Typography fontSize="20px" fontWeight={400} lineHeight="32px" color="#666666" maxWidth="800px">
+            <Typography
+              fontSize="20px"
+              fontWeight={400}
+              lineHeight="32px"
+              color="#666666"
+              maxWidth="800px"
+            >
               Quality and accuracy are at the heart of everything we do.
             </Typography>
           </Stack>
 
-          <Stack direction={{ xs: 'column', lg: 'row' }} flexWrap="wrap" gap="22px" justifyContent="center" alignItems={'stretch'}>
+          <Stack
+            direction={{ xs: "column", lg: "row" }}
+            flexWrap="wrap"
+            gap="22px"
+            justifyContent="center"
+            alignItems={"stretch"}
+          >
             {PROCESS_STEPS.map((step, index) => (
-              <ProcessStep maxWidth='280px' stepNumber={step.stepNumber} title={step.title} description={step.description} />
+              <ProcessStep
+                maxWidth="280px"
+                stepNumber={step.stepNumber}
+                title={step.title}
+                description={step.description}
+              />
             ))}
           </Stack>
         </Stack>
