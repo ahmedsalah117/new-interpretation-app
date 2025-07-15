@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Company = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
 
   return (
     <>

@@ -16,7 +16,7 @@ import { event } from 'nextjs-google-analytics';
 
 const FooterForm = () => {
 
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
   const { asPath } = useRouter();
   const isContactUsPage = asPath === '/contact-us';
 

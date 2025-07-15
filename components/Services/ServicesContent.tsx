@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 
 const ServicesContent = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
   const BackgroundImageUrl = '/images/expertise-deminsions-bg.png';
 
   const SERVICES_CARDS = [

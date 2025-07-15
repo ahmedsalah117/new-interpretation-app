@@ -8,7 +8,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 
 const Projects = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
   return (
     <>
       <HeroCard

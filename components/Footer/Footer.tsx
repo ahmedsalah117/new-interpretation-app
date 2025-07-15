@@ -5,7 +5,7 @@ import FooterForm from '@/components/Footer/FooterForm/FooterForm';
 import { useTranslation } from 'next-i18next';
 
 const Footer = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
   const { asPath } = useRouter();
   const isContactUsPage = asPath === '/contact-us';
   const isBlogPage = asPath === '/blog';

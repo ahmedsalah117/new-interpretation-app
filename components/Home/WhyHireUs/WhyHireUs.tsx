@@ -5,7 +5,7 @@ import styles from './style.module.scss';
 import { useTranslation } from 'next-i18next';
 
 const WhyHireUs = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
   return (
     <Stack id="why-hire-us-section" className="section-container">
       <Stack className="section-content" direction={{ xs: 'column', lg: 'row' }} spacing={3}>

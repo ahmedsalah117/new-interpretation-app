@@ -7,7 +7,7 @@ import ProcessStep from './ProcessStep/ProcessStep';
 import CallToAction from './CallToAction/CallToAction';
 
 const ServicesNew = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
 
   const SERVICES = [
     {

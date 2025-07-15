@@ -11,7 +11,7 @@ const hero = {
 };
 
 const Hero = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
   return (
     <Stack>
       <HeroCard

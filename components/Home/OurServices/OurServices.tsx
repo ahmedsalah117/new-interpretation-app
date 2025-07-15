@@ -5,7 +5,7 @@ import WexcuteCard from '@/components/Common/WexcuteCard/WexcuteCard';
 import { useTranslation } from 'next-i18next';
 import BalanceIcon from '@mui/icons-material/Balance';
 const OurServices = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
 
   const SERVICES_CARDS = [
     {

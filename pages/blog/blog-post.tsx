@@ -17,7 +17,7 @@ const BlogPost = () => {
 
   const { data, isLoading, refetch, isRefetching } = usePosts();
 
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
   const [posts, setPosts] = useState<any[]>([]);
   const [targetPost, setTargetPost] = useState<any>(null);
 

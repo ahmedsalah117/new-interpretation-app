@@ -13,7 +13,7 @@ const Blog = () => {
   const { push } = useRouter();
 
   const { data, isLoading } = usePosts();
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
 
   const [posts, setPosts] = useState<any[]>([]);
 

@@ -7,7 +7,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const RegisterationRequired = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
 
   const [formValues, setFormValues] = useState({
     name: '',

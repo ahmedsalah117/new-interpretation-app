@@ -11,7 +11,7 @@ const BackgroundImageUrl = '/images/how-it-works-bg.png';
 const HowItWorks = () => {
   const { isMobileView } = useWindowSize();
   const timelinePosition = isMobileView ? 'right' : 'alternate';
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
   const {
     query: { scrollId },
   } = useRouter();

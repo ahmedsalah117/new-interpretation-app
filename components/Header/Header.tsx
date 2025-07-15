@@ -25,7 +25,7 @@ const langaugeSelector = [
 ];
 
 const Header = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
   const [currentRoute, setCurrentRoute] = useState('HOME');
   const [mobileOpen, setMobileOpen] = useState(false);
   const { push, pathname, replace } = useRouter();

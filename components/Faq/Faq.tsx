@@ -6,7 +6,7 @@ import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 
 const Faq = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
   const accordionItems = [
     {
       id: 1,

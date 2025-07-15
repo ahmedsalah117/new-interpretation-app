@@ -7,7 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ServicesNew from '@/components/ServicesNew/ServicesNew';
 
 const Services = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
   return (
     <>
       <HeroCard

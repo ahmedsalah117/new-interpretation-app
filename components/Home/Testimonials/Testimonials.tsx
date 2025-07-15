@@ -6,7 +6,7 @@ import StarIcon from '@mui/icons-material/Star';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 
 const Testimonials = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
 
   const TESTIMONIALS = [
     {

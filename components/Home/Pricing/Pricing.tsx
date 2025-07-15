@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next';
 import CheckIcon from '@mui/icons-material/Check';
 import { event } from 'nextjs-google-analytics';
 const Pricing = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
 
   const PRICING_TIERS = [
     {

@@ -19,7 +19,7 @@ interface Props {
 const HeroCard: React.FC<Props> = ({ title, subtitle, backgroundImageUrl, styleProps, hasButton = true, heroCardHeight = '90vh' }) => {
   const { isMobileView, isTabletView } = useWindowSize();
   const { push } = useRouter();
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
 
   const scrollToTargetById = (id: string) => {
     const element = document.getElementById(id);

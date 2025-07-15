@@ -55,7 +55,7 @@ const FeaturedProjects = () => {
   //     },
   //   });
   // };
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
 
   return (
     <Stack className="section-container" alignItems={'center'} sx={{ overflow: 'hidden' }}>

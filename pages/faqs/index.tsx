@@ -8,7 +8,7 @@ import { useTranslation } from 'next-i18next';
 
 
 const Faqs = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
 
   const hero = {
     title: `${translate('faqs:hero:title')}`,

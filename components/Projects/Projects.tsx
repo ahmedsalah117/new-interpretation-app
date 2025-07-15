@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
 const ProjectsPage = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
   const { isMobileView, isTabletView } = useWindowSize();
   const { query } = useRouter();
   const innerBackgroundImageUrl = '/images/projects-card-inner-bg.png';

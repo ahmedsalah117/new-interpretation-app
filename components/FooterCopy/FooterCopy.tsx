@@ -10,7 +10,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const FooterCopy = () => {
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
   const { asPath } = useRouter();
   const isContactUsPage = asPath === '/contact-us';
   const isBlogPage = asPath === '/blog';

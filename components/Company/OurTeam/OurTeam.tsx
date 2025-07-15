@@ -8,7 +8,7 @@ import { event } from 'nextjs-google-analytics';
 
 const OurTeam = () => {
   const router = useRouter();
-  const { t: translate } = useTranslation();
+  const { t: translate } = useTranslation<any>();
 
   const handleExploreProjectsClick = () => {
     event('explore_projects_btn_click', {
