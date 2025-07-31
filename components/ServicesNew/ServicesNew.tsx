@@ -11,34 +11,50 @@ const ServicesNew = () => {
 
   const SERVICES = [
     {
-      icon: '/icons/services/medical-interpretation-icon.svg',
-      title: 'Medical Interpretation',
-      description: 'For appointments, consultations, and medical documents.',
+      icon: "/icons/services/medical-interpretation-icon.svg",
+      title: "Medical Interpretation",
+      description: "For appointments, consultations, and medical documents.",
     },
     {
-      icon: '/icons/services/legal-interpretation-icon.svg',
-      title: 'Legal Interpretation',
-      description: 'For court hearings, depositions, and client meetings.',
+      icon: "/icons/services/legal-interpretation-icon.svg",
+      title: "Legal Interpretation",
+      description: "For court hearings, depositions, and client meetings.",
     },
     {
-      icon: '/icons/services/business-interpretation-icon.svg',
-      title: 'Business Interpretation',
-      description: 'For conferences, negotiations, and multilingual meetings.',
+      icon: "/icons/services/business-interpretation-icon.svg",
+      title: "Business Interpretation",
+      description: "For conferences, negotiations, and multilingual meetings.",
     },
     {
-      icon: '/icons/services/event-interpretation-icon.svg',
-      title: 'Event Interpretation',
-      description: 'For conferences, trade shows, and international summits.',
+      icon: "/icons/services/event-interpretation-icon.svg",
+      title: "Event Interpretation",
+      description: "For conferences, trade shows, and international summits.",
     },
     {
-      icon: '/icons/services/remote-interpretation-icon.svg',
-      title: 'Remote Interpretation',
-      description: 'Over-the-phone and video remote interpretation services.',
+      icon: "/icons/services/remote-interpretation-icon.svg",
+      title: "Remote Interpretation",
+      description: "Over-the-phone and video remote interpretation services.",
     },
     {
-      icon: '/icons/services/document-translation-icon.svg',
-      title: 'Document Translation',
-      description: 'Translation of legal, medical, and technical documents.',
+      icon: "/icons/services/document-translation-icon.svg",
+      title: "Document Translation",
+      description: "Translation of legal, medical, and technical documents.",
+    },
+    // ------------------------------------------------------------
+    {
+      icon: "/icons/services/document-translation-icon.svg",
+      title: "Community Interpretation",
+      // description: "Translation of legal, medical, and technical documents.",
+    },
+    {
+      icon: "/icons/services/document-translation-icon.svg",
+      title: "On-Demand Interpretation",
+      // description: "Translation of legal, medical, and technical documents.",
+    },
+    {
+      icon: "/icons/services/document-translation-icon.svg",
+      title: "OPI/VRI interpretation",
+      // description: "Translation of legal, medical, and technical documents.",
     },
   ];
 
