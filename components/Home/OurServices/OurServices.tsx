@@ -110,7 +110,7 @@ const OurServices = () => {
                   <WexcuteCard
                     icon={card.cardIcon}
                     title={card.cardTitle}
-                    body={card.cardText}
+                    body={card?.cardText || ""}
                     key={index}
                     height="250px"
                     width="fit-content"
@@ -131,7 +131,7 @@ const OurServices = () => {
                   <WexcuteCard
                     icon={card.cardIcon}
                     title={card.cardTitle}
-                    body={card.cardText}
+                    body={card?.cardText || ""}
                     key={index}
                     height="250px"
                     width="fit-content"

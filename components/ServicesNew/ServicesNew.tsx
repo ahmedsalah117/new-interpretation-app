@@ -137,7 +137,7 @@ const ServicesNew = () => {
                 key={index}
                 icon={service.icon}
                 title={service.title}
-                description={service.description}
+                description={service?.description || ""}
                 onLearnMore={() => handleLearnMore(service.title)}
               />
             ))}
