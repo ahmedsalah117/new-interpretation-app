@@ -25,7 +25,7 @@ const Company = () => {
       <div className="company-page-wrapper">
         <OurStory />
         <OurValues />
-        <OurTeam />
+        {/* <OurTeam /> */}
         {/* <WhoWeAre /> */}
         {/* <HowWeWork /> */}
       </div>

@@ -10,14 +10,8 @@ const OurStory = () => {
   const router = useRouter();
   const { t: translate } = useTranslation<any>();
 
-  const handleExploreProjectsClick = () => {
-    event('explore_projects_btn_click', {
-      category: 'Projects',
-      action: 'Click',
-      label: 'Explore Projects Button',
-    });
-
-    router.push('/projects');
+  const handleExploreServicesClick = () => {
+    router.push("/services");
   };
 
   return (
@@ -26,32 +20,32 @@ const OurStory = () => {
         {/* Header Section */}
         <Stack width="100%" alignItems="center" spacing={4}>
           <Typography
-            fontSize={{ xs: '14px', md: '2rem' }}
+            fontSize={{ xs: "14px", md: "2rem" }}
             fontWeight={600}
             color="#E41469"
             letterSpacing="2px"
             textTransform="uppercase"
             sx={{
-              background: 'linear-gradient(90deg, #E41469 0%, #03ADB5 100%)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              background: "linear-gradient(90deg, #E41469 0%, #03ADB5 100%)",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
             }}
           >
             Our Story
           </Typography>
-          
+
           <Typography
-            fontSize={{ xs: '28px', md: '36px', lg: '48px' }}
+            fontSize={{ xs: "28px", md: "36px", lg: "48px" }}
             fontWeight={700}
             lineHeight="1.2"
             textAlign="center"
             maxWidth="800px"
             sx={{
-              background: 'linear-gradient(139deg, #03ADB5 0%, #E41469 56.17%)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              background: "linear-gradient(139deg, #03ADB5 0%, #E41469 56.17%)",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
             }}
           >
             Bridging communication gaps since 2020
@@ -62,52 +56,53 @@ const OurStory = () => {
         <Stack width="100%" alignItems="center">
           <Box
             sx={{
-              width: '100%',
-              maxWidth: '1400px',
-              position: 'relative',
-              '&::before': {
+              width: "100%",
+              maxWidth: "1400px",
+              position: "relative",
+              "&::before": {
                 content: '""',
-                position: 'absolute',
-                top: '-30px',
-                left: '-30px',
-                right: '30px',
-                bottom: '30px',
-                background: 'linear-gradient(135deg, #03ADB5 0%, #E41469 100%)',
-                borderRadius: '30px',
+                position: "absolute",
+                top: "-30px",
+                left: "-30px",
+                right: "30px",
+                bottom: "30px",
+                background: "linear-gradient(135deg, #03ADB5 0%, #E41469 100%)",
+                borderRadius: "30px",
                 zIndex: -1,
                 opacity: 0.15,
-              }
+              },
             }}
           >
             <Box
               sx={{
-                borderRadius: '30px',
-                overflow: 'hidden',
-                boxShadow: '0 30px 60px rgba(0, 0, 0, 0.15)',
-                position: 'relative',
-                '&::after': {
+                borderRadius: "30px",
+                overflow: "hidden",
+                boxShadow: "0 30px 60px rgba(0, 0, 0, 0.15)",
+                position: "relative",
+                "&::after": {
                   content: '""',
-                  position: 'absolute',
+                  position: "absolute",
                   top: 0,
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  background: 'linear-gradient(135deg, rgba(3, 173, 181, 0.1) 0%, rgba(228, 20, 105, 0.1) 100%)',
+                  background:
+                    "linear-gradient(135deg, rgba(3, 173, 181, 0.1) 0%, rgba(228, 20, 105, 0.1) 100%)",
                   opacity: 0.4,
-                  pointerEvents: 'none',
-                }
+                  pointerEvents: "none",
+                },
               }}
             >
               <Image
-                src={'/images/colleagues-giving-fist-bump.png'}
-                alt={'Our team collaborating and celebrating success'}
+                src={"/images/colleagues-giving-fist-bump.png"}
+                alt={"Our team collaborating and celebrating success"}
                 width={1400}
                 height={1120}
-                style={{ 
-                  width: '100%',
-                  height: 'auto',
-                  objectFit: 'cover',
-                  display: 'block'
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "cover",
+                  display: "block",
                 }}
                 priority
               />
@@ -116,61 +111,72 @@ const OurStory = () => {
         </Stack>
 
         {/* Content Section - Now below the image */}
-        <Stack 
-          direction={{ xs: 'column', lg: 'row' }} 
+        <Stack
+          direction={{ xs: "column", lg: "row" }}
           spacing={{ xs: 6, lg: 8 }}
           alignItems="center"
           width="100%"
         >
           {/* Text Content */}
           <Stack spacing={4} maxWidth="600px" width="100%">
-            <Typography 
-              fontSize={{ xs: '16px', md: '18px' }}
+            <Typography
+              fontSize={{ xs: "16px", md: "18px" }}
               lineHeight="1.8"
               color="#232932"
               textAlign="justify"
               sx={{
-                '&::first-letter': {
-                  fontSize: '3.5em',
+                "&::first-letter": {
+                  fontSize: "3.5em",
                   fontWeight: 700,
-                  float: 'left',
+                  float: "left",
                   lineHeight: 1,
-                  marginRight: '8px',
-                  marginTop: '4px',
-                  background: 'linear-gradient(139deg, #03ADB5 0%, #E41469 56.17%)',
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }
+                  marginRight: "8px",
+                  marginTop: "4px",
+                  background:
+                    "linear-gradient(139deg, #03ADB5 0%, #E41469 56.17%)",
+                  backgroundClip: "text",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                },
               }}
             >
-              Founded in 2020, InterpretAI began with a simple idea: to make professional interpretation services accessible to everyone, regardless of location or budget. What started as a small team of dedicated linguists has grown into a network of over 500 professional interpreters covering more than 50 languages, supported by our cutting-edge technology platform. Today, we serve thousands of clients across healthcare, legal, business, and community sectors, continuously expanding our services to meet the evolving needs of our diverse clientele.
+              Founded in 2020, InterpretAI began with a simple idea: to make
+              professional interpretation services accessible to everyone,
+              regardless of location or budget. What started as a small team of
+              dedicated linguists has grown into a network of over 500
+              professional interpreters covering more than 50 languages,
+              supported by our cutting-edge technology platform. Today, we serve
+              thousands of clients across healthcare, legal, business, and
+              community sectors, continuously expanding our services to meet the
+              evolving needs of our diverse clientele.
             </Typography>
 
             {/* Stats Section */}
-            <Stack 
-              direction={{ xs: 'column', sm: 'row' }}
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
               spacing={{ xs: 3, sm: 4 }}
               justifyContent="space-between"
               sx={{
-                background: 'linear-gradient(135deg, rgba(3, 173, 181, 0.05) 0%, rgba(228, 20, 105, 0.05) 100%)',
-                borderRadius: '20px',
-                padding: '32px',
-                border: '1px solid rgba(3, 173, 181, 0.1)',
+                background:
+                  "linear-gradient(135deg, rgba(3, 173, 181, 0.05) 0%, rgba(228, 20, 105, 0.05) 100%)",
+                borderRadius: "20px",
+                padding: "32px",
+                border: "1px solid rgba(3, 173, 181, 0.1)",
               }}
             >
               <Stack alignItems="center" spacing={1}>
                 <Typography
                   fontWeight={700}
-                  fontSize={{ xs: '36px', md: '48px' }}
+                  fontSize={{ xs: "36px", md: "48px" }}
                   sx={{
-                    background: 'linear-gradient(139deg, #03ADB5 0%, #E41469 56.17%)',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
+                    background:
+                      "linear-gradient(139deg, #03ADB5 0%, #E41469 56.17%)",
+                    backgroundClip: "text",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
                   }}
                 >
-                  500+
+                  1500+
                 </Typography>
                 <Typography
                   fontWeight={500}
@@ -185,12 +191,13 @@ const OurStory = () => {
               <Stack alignItems="center" spacing={1}>
                 <Typography
                   fontWeight={700}
-                  fontSize={{ xs: '36px', md: '48px' }}
+                  fontSize={{ xs: "36px", md: "48px" }}
                   sx={{
-                    background: 'linear-gradient(139deg, #03ADB5 0%, #E41469 56.17%)',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
+                    background:
+                      "linear-gradient(139deg, #03ADB5 0%, #E41469 56.17%)",
+                    backgroundClip: "text",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
                   }}
                 >
                   50+
@@ -208,12 +215,13 @@ const OurStory = () => {
               <Stack alignItems="center" spacing={1}>
                 <Typography
                   fontWeight={700}
-                  fontSize={{ xs: '36px', md: '48px' }}
+                  fontSize={{ xs: "36px", md: "48px" }}
                   sx={{
-                    background: 'linear-gradient(139deg, #03ADB5 0%, #E41469 56.17%)',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
+                    background:
+                      "linear-gradient(139deg, #03ADB5 0%, #E41469 56.17%)",
+                    backgroundClip: "text",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
                   }}
                 >
                   4+
@@ -231,19 +239,20 @@ const OurStory = () => {
           </Stack>
 
           {/* Additional Content Space - Could be used for more text, testimonials, or another image */}
-          <Stack 
-            spacing={4} 
-            maxWidth="600px" 
+          <Stack
+            spacing={4}
+            maxWidth="600px"
             width="100%"
             sx={{
-              background: 'linear-gradient(135deg, rgba(3, 173, 181, 0.02) 0%, rgba(228, 20, 105, 0.02) 100%)',
-              borderRadius: '20px',
-              padding: '32px',
-              border: '1px solid rgba(3, 173, 181, 0.05)',
+              background:
+                "linear-gradient(135deg, rgba(3, 173, 181, 0.02) 0%, rgba(228, 20, 105, 0.02) 100%)",
+              borderRadius: "20px",
+              padding: "32px",
+              border: "1px solid rgba(3, 173, 181, 0.05)",
             }}
           >
             <Typography
-              fontSize={{ xs: '20px', md: '24px' }}
+              fontSize={{ xs: "20px", md: "24px" }}
               fontWeight={600}
               color="#232932"
               textAlign="center"
@@ -251,12 +260,16 @@ const OurStory = () => {
               Our Mission
             </Typography>
             <Typography
-              fontSize={{ xs: '16px', md: '18px' }}
+              fontSize={{ xs: "16px", md: "18px" }}
               lineHeight="1.7"
               color="#5D6571"
               textAlign="justify"
             >
-              We believe that language should never be a barrier to understanding, care, or opportunity. Our mission is to bridge communication gaps through innovative technology and human expertise, ensuring that every voice is heard and every message is understood with clarity and cultural sensitivity.
+              We believe that language should never be a barrier to
+              understanding, care, or opportunity. Our mission is to bridge
+              communication gaps through innovative technology and human
+              expertise, ensuring that every voice is heard and every message is
+              understood with clarity and cultural sensitivity.
             </Typography>
           </Stack>
         </Stack>
@@ -267,24 +280,24 @@ const OurStory = () => {
             size="large"
             variant="contained"
             sx={{
-              maxWidth: '350px',
-              width: '100%',
-              borderRadius: '100px',
-              height: '64px',
-              fontSize: { xs: '18px', md: '20px' },
+              maxWidth: "350px",
+              width: "100%",
+              borderRadius: "100px",
+              height: "64px",
+              fontSize: { xs: "18px", md: "20px" },
               fontWeight: 600,
-              background: 'linear-gradient(135deg, #03ADB5 0%, #E41469 100%)',
-              boxShadow: '0 8px 24px rgba(3, 173, 181, 0.3)',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                background: 'linear-gradient(135deg, #E41469 0%, #03ADB5 100%)',
-                transform: 'translateY(-2px)',
-                boxShadow: '0 12px 32px rgba(228, 20, 105, 0.4)',
-              }
+              background: "linear-gradient(135deg, #03ADB5 0%, #E41469 100%)",
+              boxShadow: "0 8px 24px rgba(3, 173, 181, 0.3)",
+              transition: "all 0.3s ease",
+              "&:hover": {
+                background: "linear-gradient(135deg, #E41469 0%, #03ADB5 100%)",
+                transform: "translateY(-2px)",
+                boxShadow: "0 12px 32px rgba(228, 20, 105, 0.4)",
+              },
             }}
-            onClick={handleExploreProjectsClick}
+            onClick={handleExploreServicesClick}
           >
-            Explore Our Projects
+            Explore Our Services
           </Button>
         </Stack>
       </Stack>

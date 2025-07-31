@@ -1,9 +1,7 @@
-import React from 'react';
-import styles from './style.module.scss';
-import { Stack, Typography } from '@mui/material';
-import WexcuteCard from '@/components/Common/WexcuteCard/WexcuteCard';
-import { useTranslation } from 'next-i18next';
-import BalanceIcon from '@mui/icons-material/Balance';
+import React from "react";
+import { Stack, Typography } from "@mui/material";
+import WexcuteCard from "@/components/Common/WexcuteCard/WexcuteCard";
+import { useTranslation } from "next-i18next";
 import MedicalServicesIcon from "@mui/icons-material/MedicalServices";
 import CallIcon from "@mui/icons-material/Call";
 import BusinessIcon from "@mui/icons-material/Business";
