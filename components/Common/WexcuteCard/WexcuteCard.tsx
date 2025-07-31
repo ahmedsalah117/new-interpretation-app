@@ -19,10 +19,25 @@ const WexcuteCard = ({ icon, title, body, align = 'center', justify = 'center', 
   return (
     <Stack
       className={styles["card-container"]}
-      style={{ border: '1px solid #DFE6F0', width: width || '250px', height: height || 'fit-content', maxWidth }}
+      style={{
+        border: "1px solid #DFE6F0",
+        width: width || "250px",
+        height: height || "fit-content",
+        maxWidth,
+        minWidth: "300px",
+      }}
     >
-      <Stack alignItems={align} justifyContent={justify} spacing={2} className={styles["card-content"]}>
-        {typeof icon === 'string' ? <Image src={icon} alt={'icon'} width="64" height="66" /> : icon}
+      <Stack
+        alignItems={align}
+        justifyContent={justify}
+        spacing={2}
+        className={styles["card-content"]}
+      >
+        {typeof icon === "string" ? (
+          <Image src={icon} alt={"icon"} width="64" height="66" />
+        ) : (
+          icon
+        )}
         <Typography className={styles["card-title"]} textAlign={align}>
           {title}
         </Typography>
