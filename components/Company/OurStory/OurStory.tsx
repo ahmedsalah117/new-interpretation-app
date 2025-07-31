@@ -5,14 +5,11 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { event } from 'nextjs-google-analytics';
+import Link from "next/link";
 
 const OurStory = () => {
   const router = useRouter();
   const { t: translate } = useTranslation<any>();
-
-  const handleExploreServicesClick = () => {
-    router.push("/services");
-  };
 
   return (
     <Stack className="section-container" pt="50px">
@@ -276,29 +273,31 @@ const OurStory = () => {
 
         {/* Call to Action */}
         <Stack width="100%" alignItems="center" spacing={3}>
-          <Button
-            size="large"
-            variant="contained"
-            sx={{
-              maxWidth: "350px",
-              width: "100%",
-              borderRadius: "100px",
-              height: "64px",
-              fontSize: { xs: "18px", md: "20px" },
-              fontWeight: 600,
-              background: "linear-gradient(135deg, #03ADB5 0%, #E41469 100%)",
-              boxShadow: "0 8px 24px rgba(3, 173, 181, 0.3)",
-              transition: "all 0.3s ease",
-              "&:hover": {
-                background: "linear-gradient(135deg, #E41469 0%, #03ADB5 100%)",
-                transform: "translateY(-2px)",
-                boxShadow: "0 12px 32px rgba(228, 20, 105, 0.4)",
-              },
-            }}
-            onClick={handleExploreServicesClick}
-          >
-            Explore Our Services
-          </Button>
+          <Link href="/services">
+            <Button
+              size="large"
+              variant="contained"
+              sx={{
+                maxWidth: "350px",
+                width: "100%",
+                borderRadius: "100px",
+                height: "64px",
+                fontSize: { xs: "18px", md: "20px" },
+                fontWeight: 600,
+                background: "linear-gradient(135deg, #03ADB5 0%, #E41469 100%)",
+                boxShadow: "0 8px 24px rgba(3, 173, 181, 0.3)",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  background:
+                    "linear-gradient(135deg, #E41469 0%, #03ADB5 100%)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 12px 32px rgba(228, 20, 105, 0.4)",
+                },
+              }}
+            >
+              Explore Our Services
+            </Button>
+          </Link>
         </Stack>
       </Stack>
     </Stack>

@@ -18,7 +18,8 @@ import { useTranslation } from 'next-i18next';
 import { motion } from 'framer-motion';
 import { event } from 'nextjs-google-analytics';
 
-const pages = ['home', 'company', 'services', 'projects', 'blog', 'faqs', 'contact_us'];
+// const pages = ['home', 'company', 'services', 'projects', 'blog', 'faqs', 'contact_us'];
+const pages = ['home', 'company', 'services', 'contact_us'];
 const langaugeSelector = [
   { name: 'English', route: 'en', flagUrl: '/images/en.svg' },
   { name: 'Deutsch', route: 'de', flagUrl: '/images/de.svg' },
@@ -235,8 +236,8 @@ const Header = () => {
             >
               {translate(`common:header:buttonText`)}
             </Button>
-
-            <Stack direction="row" alignItems="center" spacing={2}>
+{/* Language selector button */}
+            {/* <Stack direction="row" alignItems="center" spacing={2}>
               <IconButton
                 onClick={handleOpenUserMenu}
                 sx={{
@@ -295,7 +296,7 @@ const Header = () => {
               >
                 <MenuIcon />
               </IconButton>
-            </Stack>
+            </Stack> */}
           </Stack>
         </Stack>
         <Box id="drawer-wrapper">

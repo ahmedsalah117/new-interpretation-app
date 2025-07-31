@@ -18,7 +18,7 @@ export default function Home() {
       <WhyHireUs />
       <OurServices />
       <OurExpertise />
-      <Pricing />
+      {/* <Pricing /> */}
       <Testimonials />
       {/* <RegisterationRequired /> */}
       {/* <FeaturedProjects /> */}
