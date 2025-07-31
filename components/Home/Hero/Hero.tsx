@@ -5,9 +5,9 @@ import { Stack } from '@mui/material';
 import { useTranslation } from 'next-i18next';
 
 const hero = {
-  title: `AI-Powered Interpretation Services`,
-  subTitle: `Break down language barriers and connect with the world.\nOur advanced AI technology provides real-time, accurate, and culturally sensitive interpretation for all your needs`,
-  backgroundImageUrl: '/images/hero-image.png',
+  title: `Eliminating language barriers, Building trustworthy communications`,
+  subTitle: `Breaking down language barriers and connecting with the world.\nOur advanced expert interpreters provide real-time, accurate, and culturally sensitive interpretation for all your needs.`,
+  backgroundImageUrl: "/images/hero-image.png",
 };
 
 const Hero = () => {

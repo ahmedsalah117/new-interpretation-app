@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { motion } from 'framer-motion';
 import { event } from 'nextjs-google-analytics';
-
+import styles from "./style.module.scss";
 interface Props {
   title: string;
   subtitle?: string;
@@ -16,7 +16,14 @@ interface Props {
   heroCardHeight?: string;
 }
 
-const HeroCard: React.FC<Props> = ({ title, subtitle, backgroundImageUrl, styleProps, hasButton = true, heroCardHeight = '90vh' }) => {
+const HeroCard: React.FC<Props> = ({
+  title,
+  subtitle,
+  backgroundImageUrl,
+  styleProps,
+  hasButton = true,
+  heroCardHeight = "90vh",
+}) => {
   const { isMobileView, isTabletView } = useWindowSize();
   const { push } = useRouter();
   const { t: translate } = useTranslation<any>();
@@ -29,49 +36,67 @@ const HeroCard: React.FC<Props> = ({ title, subtitle, backgroundImageUrl, styleP
 
     window.scrollTo({
       top: offsetPosition,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
   const handleContactUs = () => {
-    event('lets_talk_hero_btn_click', {
-      category: 'Contact',
-      action: 'Click',
-      label: 'Lets talk Hero Button',
+    event("lets_talk_hero_btn_click", {
+      category: "Contact",
+      action: "Click",
+      label: "Lets talk Hero Button",
     });
 
-    scrollToTargetById('footer');
+    scrollToTargetById("footer");
   };
 
   return (
     <Stack
-      className="section-container hero-card"
+      className={`${styles["section-container"]} ${styles["hero-card"]}`}
       sx={{
-        minHeight: '0px',
+        minHeight: "0px",
         height: heroCardHeight,
-        maxHeight: { sm: '90%', lg: '900px' },
+        maxHeight: { sm: "90%", lg: "900px" },
         backgroundImage: `url(${backgroundImageUrl})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        borderRadius: { xs: '0px 0px 40px 40px', sm: '0px 0px 80px 80px', lg: '0px 0px 100px 100px' },
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        borderRadius: {
+          xs: "0px 0px 40px 40px",
+          sm: "0px 0px 80px 80px",
+          lg: "0px 0px 100px 100px",
+        },
       }}
     >
       <Stack
         className="section-content"
         justifyContent="center"
-        alignItems={{ xs: 'flex-start', lg: 'flex-start' }}
+        alignItems={{ xs: "flex-start", lg: "flex-start" }}
         gap={7}
         sx={{
-          textAlign: { xs: 'start', lg: 'start' },
-          whiteSpace: isMobileView ? 'normal' : 'break-spaces',
+          textAlign: { xs: "start", lg: "start" },
+          whiteSpace: isMobileView ? "normal" : "break-spaces",
           ...styleProps,
         }}
       >
-        <Stack className="hero-content-wrapper" gap={3} alignSelf={'flex-start'} pt="56px">
-          <motion.div initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }}>
+        <Stack
+          className={styles["hero-content-wrapper"]}
+          gap={3}
+          alignSelf={"flex-start"}
+          pt="0"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -100 }}
+          >
             <Typography
-              className="content-title"
-              sx={{ fontSize: { xs: '3rem', sm: '4rem', md: '5rem', xl: '5rem' }, fontWeight: 700, marginBottom: '1rem' }}
+              className={styles["content-title"]}
+              sx={{
+                fontSize: { xs: "3rem", sm: "4rem", md: "4rem", xl: "3.7rem" },
+                fontWeight: 700,
+                marginBottom: "4rem",
+                paddingTop: "0 !important",
+              }}
             >
               {title}
             </Typography>
@@ -79,7 +104,10 @@ const HeroCard: React.FC<Props> = ({ title, subtitle, backgroundImageUrl, styleP
               <Typography
                 className="content-subtitle"
                 color="white"
-                sx={{ fontSize: { xs: '1.5rem', md: '2rem', xl: '2rem' }, fontWeight: 500 }}
+                sx={{
+                  fontSize: { xs: "1.5rem" },
+                  fontWeight: 500,
+                }}
               >
                 {subtitle}
               </Typography>
@@ -90,16 +118,17 @@ const HeroCard: React.FC<Props> = ({ title, subtitle, backgroundImageUrl, styleP
                   onClick={handleContactUs}
                   variant="contained"
                   sx={{
-                    display: 'flex',
-                    width: { xs: '200px', sm: '220px', md: '300px' },
-                    height: { xs: '36px', sm: '42px', md: '64px' },
-                    padding: '8px 24px',
-                    borderRadius: '100px',
-                    boxShadow: '0px 2px 0px 0px rgba(0, 0, 0, 0.04)',
-                    fontSize: { xs: '16px', md: '24px' },
+                    display: "flex",
+                    width: { xs: "200px", sm: "220px", md: "300px" },
+                    height: { xs: "36px", sm: "42px", md: "64px" },
+                    padding: "8px 24px",
+                    borderRadius: "100px",
+                    boxShadow: "0px 2px 0px 0px rgba(0, 0, 0, 0.04)",
+                    fontSize: { xs: "16px", md: "24px" },
                     fontWeight: 600,
                     // background: 'linear-gradient(302deg, #03adb5 8.02%, darkred 78.29%)',
-                    background: 'linear-gradient(302deg, darkred 30.02%, #03adb5  78.29%)',
+                    background:
+                      "linear-gradient(302deg, darkred 30.02%, #03adb5  78.29%)",
                   }}
                 >
                   Learn More
