@@ -33,11 +33,13 @@ const WexcuteCard = ({ icon, title, body, align = 'center', justify = 'center', 
         spacing={2}
         className={styles["card-content"]}
       >
-        {typeof icon === "string" ? (
-          <Image src={icon} alt={"icon"} width="64" height="66" />
-        ) : (
-          icon
-        )}
+        <div className={`${styles["icon-container"]}`}>
+          {typeof icon === "string" ? (
+            <Image src={icon} alt={"icon"} fill />
+          ) : (
+            icon
+          )}
+        </div>
         <Typography className={styles["card-title"]} textAlign={align}>
           {title}
         </Typography>

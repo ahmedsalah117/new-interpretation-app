@@ -137,7 +137,7 @@ const OurStory = () => {
                 },
               }}
             >
-              Founded in 2020, InterpretAI began with a simple idea: to make
+              Founded in 2020, Globi began with a simple idea: to make
               professional interpretation services accessible to everyone,
               regardless of location or budget. What started as a small team of
               dedicated linguists has grown into a network of over 500

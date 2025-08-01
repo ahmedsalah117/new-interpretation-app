@@ -12,7 +12,6 @@ import {
 } from "@tanstack/react-query";
 import { useState } from "react";
 import { GoogleAnalytics } from "nextjs-google-analytics";
-
 const clientSideEmotionCache = createEmotionCache();
 
 function MyApp({

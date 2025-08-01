@@ -18,7 +18,7 @@ const Company = () => {
       <HeroCard
         heroCardHeight="564px"
         title={translate("company:hero:title")}
-        subtitle={translate("company:hero:subtitle") as string}
+        subtitle={"Your Voice in Every Language"}
         backgroundImageUrl={"/images/hero-image.png"}
         hasButton={false}
       />

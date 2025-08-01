@@ -79,10 +79,21 @@ const Testimonials = () => {
 
   return (
     <Stack className="section-container" direction="column" spacing={6}>
-      <Stack className="section-content" direction="column" spacing={4} alignItems="center" sx={{maxWidth: '100% !important'}}>
-        <Stack direction="column" spacing={2} alignItems="center" maxWidth="800px">
+      <Stack
+        className="section-content"
+        direction="column"
+        spacing={4}
+        alignItems="center"
+        sx={{ maxWidth: "100% !important" }}
+      >
+        <Stack
+          direction="column"
+          spacing={2}
+          alignItems="center"
+          maxWidth="800px"
+        >
           <Typography
-            fontSize={{ xs: '32px', lg: '48px' }}
+            fontSize={{ xs: "32px", lg: "48px" }}
             fontWeight={700}
             lineHeight="56px"
             className="testimonials-header"
@@ -90,28 +101,29 @@ const Testimonials = () => {
           >
             What Our Clients Say
           </Typography>
-          <Typography 
-            fontSize="20px" 
-            fontWeight={400} 
-            lineHeight="32px" 
+          <Typography
+            fontSize="20px"
+            fontWeight={400}
+            lineHeight="32px"
             textAlign="center"
             color="#666"
           >
-            Trusted by businesses worldwide for professional interpretation services
+            Trusted by businesses worldwide for professional interpretation
+            services
           </Typography>
         </Stack>
 
         {/* Overall Rating Section */}
-        <Stack 
-          direction="column" 
-          spacing={2} 
+        <Stack
+          direction="column"
+          spacing={2}
           alignItems="center"
-          sx={{ 
+          sx={{
             mt: 2,
             p: 4,
-            backgroundColor: 'rgba(3, 173, 181, 0.05)',
-            borderRadius: '16px',
-            border: '1px solid rgba(3, 173, 181, 0.1)'
+            backgroundColor: "rgba(3, 173, 181, 0.05)",
+            borderRadius: "16px",
+            border: "1px solid rgba(3, 173, 181, 0.1)",
           }}
         >
           <Stack direction="row" spacing={1} alignItems="center">
@@ -126,12 +138,12 @@ const Testimonials = () => {
         </Stack>
 
         {/* Testimonials Grid */}
-        <Stack 
-          direction={{ xs: 'column', md: 'row' }} 
-          spacing={3} 
-          alignItems="stretch" 
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          spacing={3}
+          alignItems="stretch"
           justifyContent="center"
-          sx={{ mt: 4, width: '100%' }}
+          sx={{ mt: 4, width: "100%" }}
           flexWrap="wrap"
         >
           {TESTIMONIALS.map((testimonial, index) => (
@@ -139,24 +151,28 @@ const Testimonials = () => {
               key={testimonial.id}
               className="testimonial-card"
               sx={{
-                flex: { xs: '1 1 100%', md: '1 1 calc(50% - 12px)', lg: '1 1 calc(33.333% - 16px)' },
-                maxWidth: { lg: '400px' }
+                flex: {
+                  xs: "1 1 100%",
+                  md: "1 1 calc(50% - 12px)",
+                  lg: "1 1 calc(33.333% - 16px)",
+                },
+                maxWidth: { lg: "400px" },
               }}
             >
-              <Stack 
-                direction="column" 
-                spacing={3} 
+              <Stack
+                direction="column"
+                spacing={3}
                 className="testimonial-content"
-                sx={{ p: 4, height: '100%' }}
+                sx={{ p: 4, height: "100%" }}
               >
                 {/* Quote Icon */}
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                  <FormatQuoteIcon 
-                    sx={{ 
-                      color: '#03adb5', 
+                <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+                  <FormatQuoteIcon
+                    sx={{
+                      color: "#03adb5",
                       fontSize: 32,
-                      opacity: 0.3
-                    }} 
+                      opacity: 0.3,
+                    }}
                   />
                 </Box>
 
@@ -166,9 +182,9 @@ const Testimonials = () => {
                 </Stack>
 
                 {/* Testimonial Text */}
-                <Typography 
-                  fontSize="16px" 
-                  color="#232932" 
+                <Typography
+                  fontSize="16px"
+                  color="#232932"
                   lineHeight="24px"
                   sx={{ flexGrow: 1 }}
                 >
@@ -180,16 +196,20 @@ const Testimonials = () => {
                   <Avatar
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    sx={{ 
-                      width: 48, 
+                    sx={{
+                      width: 48,
                       height: 48,
-                      backgroundColor: '#03adb5'
+                      backgroundColor: "#03adb5",
                     }}
                   >
                     {testimonial.name.charAt(0)}
                   </Avatar>
                   <Stack direction="column" spacing={0.5}>
-                    <Typography fontSize="16px" fontWeight={600} color="#232932">
+                    <Typography
+                      fontSize="16px"
+                      fontWeight={600}
+                      color="#232932"
+                    >
                       {testimonial.name}
                     </Typography>
                     <Typography fontSize="14px" color="#666">
@@ -206,14 +226,15 @@ const Testimonials = () => {
         </Stack>
 
         {/* Trust Indicators */}
-        <Stack 
-          direction={{ xs: 'column', md: 'row' }} 
-          spacing={4} 
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          spacing={4}
           alignItems="center"
           justifyContent="center"
-          sx={{ mt: 6, pt: 4, borderTop: '1px solid #E0E0E0' }}
+          sx={{ mt: 6, pt: 4, borderTop: "1px solid #E0E0E0" }}
         >
-          <Stack direction="row" spacing={2} alignItems="center">
+          {/* Verified Reviews */}
+          {/* <Stack direction="row" spacing={2} alignItems="center">
             <Box 
               sx={{ 
                 width: 40, 
@@ -233,8 +254,8 @@ const Testimonials = () => {
               Verified Reviews
             </Typography>
           </Stack>
-
-          <Stack direction="row" spacing={2} alignItems="center">
+          {/* Real Customers */}
+          {/* <Stack direction="row" spacing={2} alignItems="center">
             <Box 
               sx={{ 
                 width: 40, 
@@ -253,18 +274,19 @@ const Testimonials = () => {
             <Typography fontSize="16px" fontWeight={500} color="#232932">
               Real Customers
             </Typography>
-          </Stack>
+          </Stack> */}
 
+          {/* Quality Guaranteed */}
           <Stack direction="row" spacing={2} alignItems="center">
-            <Box 
-              sx={{ 
-                width: 40, 
-                height: 40, 
-                backgroundColor: '#03adb5', 
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
+            <Box
+              sx={{
+                width: 40,
+                height: 40,
+                backgroundColor: "#03adb5",
+                borderRadius: "50%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               <Typography fontSize="16px" fontWeight={700} color="white">
