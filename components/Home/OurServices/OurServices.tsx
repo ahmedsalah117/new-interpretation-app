@@ -17,43 +17,42 @@ const OurServices = () => {
       cardIcon: (
         <OndemandVideoIcon sx={{ fontSize: "32px", color: "#e41469" }} />
       ),
-      cardText: `Connect with a professional interpreter in seconds, anytime, anywhere`,
+      cardText: ``,
       cardTitle: `On-demand Interpretation`,
     },
     {
       cardIcon: <GavelIcon sx={{ fontSize: "32px", color: "#e41469" }} />,
       // cardIcon: <BalanceIcon />,
-
-      cardText: `Certified interpreters for legal proceedings, ensuring accuracy and confidentiality`,
+      cardText: ``,
       cardTitle: `Legal Interpretation`,
     },
     {
       cardIcon: <CallIcon sx={{ fontSize: "32px", color: "#e41469" }} />,
-      // cardText: `Connect with a professional interpreter in seconds, anytime, anywhere`,
+      cardText: ``,
       cardTitle: `Scheduled Calls`,
     },
     {
       cardIcon: (
         <VideoCameraFrontIcon sx={{ fontSize: "32px", color: "#e41469" }} />
       ),
-      // cardText: `Connect with a professional interpreter in seconds, anytime, anywhere`,
+      cardText: ``,
       cardTitle: `OPI/VRI interpretation`,
     },
     {
       cardIcon: (
         <MedicalServicesIcon sx={{ fontSize: "32px", color: "#e41469" }} />
       ),
-      // cardText: `Connect with a professional interpreter in seconds, anytime, anywhere`,
+      cardText: ``,
       cardTitle: `Medical interpretation`,
     },
     {
       cardIcon: <BusinessIcon sx={{ fontSize: "32px", color: "#e41469" }} />,
-      // cardText: `Connect with a professional interpreter in seconds, anytime, anywhere`,
+      cardText: ``,
       cardTitle: `Business interpretation`,
     },
     {
       cardIcon: <PeopleIcon sx={{ fontSize: "32px", color: "#e41469" }} />,
-      // cardText: `Connect with a professional interpreter in seconds, anytime, anywhere`,
+      cardText: ``,
       cardTitle: `Community interpretation`,
     },
     // {
