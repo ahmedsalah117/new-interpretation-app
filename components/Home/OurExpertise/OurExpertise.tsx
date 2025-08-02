@@ -235,10 +235,11 @@ const OurExpertise = () => {
           </Typography>
 
           <Typography
-            fontSize="24px"
+            fontSize={{ xs: "16px", md: "24px" }}
             fontWeight={400}
             lineHeight="38px"
             width="100%"
+            paddingBottom={{ xs: "2rem" }}
           >
             {translate("home:ourExpertise:body")}
           </Typography>

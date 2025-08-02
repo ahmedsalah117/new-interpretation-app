@@ -98,7 +98,7 @@ const HeroCard: React.FC<Props> = ({
               sx={{
                 fontSize: { xs: "2rem", sm: "4rem", md: "4rem", xl: "3.7rem" },
                 fontWeight: 700,
-                marginBottom: "4rem",
+                marginBottom: { xs: "1rem", md: "4rem" },
                 paddingTop: "0 !important",
               }}
             >
