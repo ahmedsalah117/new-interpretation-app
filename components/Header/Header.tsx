@@ -1,54 +1,51 @@
-import React, { useEffect, useState } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Image from 'next/image';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import Button from '@mui/material/Button';
-import { Menu, MenuItem, Slide, Stack, Typography } from '@mui/material';
-import { useRouter } from 'next/router';
-import { useWindowSize } from '@/hooks/useWindowSize';
-import Divider from '@mui/material/Divider';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import TranslateIcon from '@mui/icons-material/Translate';
-import { useTranslation } from 'next-i18next';
-import { motion } from 'framer-motion';
-import { event } from 'nextjs-google-analytics';
+import React, { useEffect, useState, useTransition } from "react";
+import AppBar from "@mui/material/AppBar";
+import Image from "next/image";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import Button from "@mui/material/Button";
+import { Menu, MenuItem, Slide, Stack, Typography } from "@mui/material";
+import { useRouter } from "next/router";
+import { useWindowSize } from "@/hooks/useWindowSize";
+import Divider from "@mui/material/Divider";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItemButton from "@mui/material/ListItemButton";
+import TranslateIcon from "@mui/icons-material/Translate";
+import { useTranslation } from "next-i18next";
+import { motion } from "framer-motion";
+import { event } from "nextjs-google-analytics";
 
 // const pages = ['home', 'company', 'services', 'projects', 'blog', 'faqs', 'contact_us'];
-const pages = ['home', 'company', 'services', 'contact_us'];
+const pages = ["home", "company", "services", "contact_us"];
 const langaugeSelector = [
-  { name: 'English', route: 'en', flagUrl: '/images/en.svg' },
-  { name: 'Deutsch', route: 'de', flagUrl: '/images/de.svg' },
+  { name: "English", route: "en", flagUrl: "/images/en.svg" },
+  { name: "Deutsch", route: "de", flagUrl: "/images/de.svg" },
 ];
 
 const Header = () => {
   const { t: translate } = useTranslation<any>();
-  const [currentRoute, setCurrentRoute] = useState('HOME');
+  const [currentRoute, setCurrentRoute] = useState("HOME");
   const [mobileOpen, setMobileOpen] = useState(false);
   const { push, pathname, replace } = useRouter();
   const { isTabletView } = useWindowSize();
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
+  const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
   useEffect(() => {
-    if (pathname === '/') {
-      setCurrentRoute('HOME');
+    if (pathname === "/") {
+      setCurrentRoute("HOME");
     } else {
-      setCurrentRoute(pathname.toUpperCase().replace('/', ''));
+      setCurrentRoute(pathname.toUpperCase().replace("/", ""));
     }
 
     return () => {
-      setCurrentRoute('');
+      setCurrentRoute("");
     };
   }, [pathname]);
-
-  useEffect(() => {
-    console.log('the current isTabletView status is', isTabletView);
-  }, [isTabletView]);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -63,15 +60,17 @@ const Header = () => {
   };
 
   const updateSelectedLanguage = (selectedLanguage) => {
-    event('update_language_btn_click', {
-      category: 'Language',
-      action: 'Click',
-      label: 'Change Language',
+    event("update_language_btn_click", {
+      category: "Language",
+      action: "Click",
+      label: "Change Language",
     });
 
     const { pathname } = router;
     const { route: languageRoute } = selectedLanguage;
-    replace(`${languageRoute}${pathname}`, `${languageRoute}${pathname}`, { locale: `${languageRoute}` });
+    replace(`${languageRoute}${pathname}`, `${languageRoute}${pathname}`, {
+      locale: `${languageRoute}`,
+    });
   };
 
   const handleLogoClick = () => {
@@ -82,26 +81,27 @@ const Header = () => {
     const route = page.toUpperCase();
 
     switch (route) {
-      case 'HOME':
+      case "HOME":
         push(`/`);
+
         break;
-      case 'COMPANY':
-        push('/company');
+      case "COMPANY":
+        push("/company");
         break;
-      case 'SERVICES':
-        push('/services');
+      case "SERVICES":
+        push("/services");
         break;
-      case 'PROJECTS':
-        push('/projects');
+      case "PROJECTS":
+        push("/projects");
         break;
-      case 'BLOG':
-        push('/blog');
+      case "BLOG":
+        push("/blog");
         break;
-      case 'FAQS':
-        push('/faqs');
+      case "FAQS":
+        push("/faqs");
         break;
-      case 'CONTACT_US':
-        push('/contact-us');
+      case "CONTACT_US":
+        push("/contact-us");
         break;
       default:
         break;
@@ -122,36 +122,55 @@ const Header = () => {
 
     window.scrollTo({
       top: offsetPosition,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
   const handleLetsTalk = () => {
-    event('lets_talk_header_btn_click', {
-      category: 'Contact',
-      action: 'Click',
-      label: 'Lets talk Header Button',
+    event("lets_talk_header_btn_click", {
+      category: "Contact",
+      action: "Click",
+      label: "Lets talk Header Button",
     });
 
-    scrollToTargetById('footer');
+    scrollToTargetById("footer");
   };
 
   const drawer = (
-    <Box paddingTop={1} sx={{ backgroundColor: 'black' }}>
-      <Image src={'/images/wexcute-logo-text-1.svg'} width={168} height={40} alt="Wexcute Logo" />
+    <Box paddingTop={1} sx={{ backgroundColor: "black" }}>
+      <Image
+        src={"/images/wexcute-logo-text-1.svg"}
+        width={168}
+        height={40}
+        alt="Wexcute Logo"
+      />
       <Divider />
 
-      <List sx={{ width: '100%', maxWidth: 250, bgcolor: 'background.paper' }} component="nav" aria-labelledby="nested-list-subheader">
+      <List
+        sx={{ width: "100%", maxWidth: 250, bgcolor: "background.paper" }}
+        component="nav"
+        aria-labelledby="nested-list-subheader"
+      >
         {pages.map((page) => (
           <Slide in={mobileOpen} direction="down" timeout={500}>
             <ListItemButton
               key={page}
               onClick={() => handleRouting(page)}
               sx={{
-                color: currentRoute === page.toUpperCase() ? 'primary.main' : 'secondary.contrastText',
+                color:
+                  currentRoute === page.toUpperCase()
+                    ? "primary.main"
+                    : "secondary.contrastText",
               }}
             >
-              <ListItemIcon sx={{ color: currentRoute === page.toUpperCase() ? 'primary.main' : 'secondary.contrastText' }}>
+              <ListItemIcon
+                sx={{
+                  color:
+                    currentRoute === page.toUpperCase()
+                      ? "primary.main"
+                      : "secondary.contrastText",
+                }}
+              >
                 {translate(`common:header:pages:${page}`)}
               </ListItemIcon>
             </ListItemButton>
