@@ -55,11 +55,15 @@ const HeroCard: React.FC<Props> = ({
       className={`${styles["section-container"]} ${styles["hero-card"]}`}
       sx={{
         minHeight: "0px",
-        height: heroCardHeight,
+        height: {
+          xs: "100%",
+          md: heroCardHeight,
+        },
         maxHeight: { sm: "90%", lg: "900px" },
         backgroundImage: `url(${backgroundImageUrl})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+        paddingTop: { xs: "80px", sm: "80px", md: "120px" },
         borderRadius: {
           xs: "0px 0px 40px 40px",
           sm: "0px 0px 80px 80px",
@@ -92,7 +96,7 @@ const HeroCard: React.FC<Props> = ({
             <Typography
               className={styles["content-title"]}
               sx={{
-                fontSize: { xs: "3rem", sm: "4rem", md: "4rem", xl: "3.7rem" },
+                fontSize: { xs: "2rem", sm: "4rem", md: "4rem", xl: "3.7rem" },
                 fontWeight: 700,
                 marginBottom: "4rem",
                 paddingTop: "0 !important",
@@ -105,7 +109,7 @@ const HeroCard: React.FC<Props> = ({
                 className="content-subtitle"
                 color="white"
                 sx={{
-                  fontSize: { xs: "1.5rem" },
+                  fontSize: { xs: "1rem", sm: "1.5rem" },
                   fontWeight: 500,
                 }}
               >

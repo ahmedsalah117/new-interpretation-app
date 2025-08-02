@@ -162,54 +162,77 @@ const Header = () => {
   );
 
   return (
-    <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -50 }}>
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+    >
       <AppBar
         position="absolute"
         component="nav"
         sx={{
-          top: '16px',
-          background: 'transparent',
-          height: '90px',
-          width: '100%',
-          justifyContent: 'space-between',
-          display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'row',
-          boxShadow: 'none',
+          top: "16px",
+          background: "transparent",
+          height: "90px",
+          width: "100%",
+          justifyContent: "space-between",
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "row",
+          boxShadow: "none",
         }}
       >
-        <Stack className="section-content" direction="row" alignItems="center" justifyContent="space-between" sx={{ width: '100%' }}>
+        <Stack
+          className="section-content"
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{ width: "100%" }}
+        >
           {isTabletView ? (
             <Image
-              src={'/images/wexcute-logo-icon.svg'}
+              src={"/images/wexcute-logo-icon.svg"}
               width={56}
               height={56}
               alt="Wexcute Logo"
               onClick={handleLogoClick}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: "pointer" }}
             />
           ) : (
             <Image
-              src={'/images/wexcute-logo-text-1.svg'}
+              src={"/images/wexcute-logo-text-1.svg"}
               width={220}
               height={56}
               alt="Wexcute Logo"
               onClick={handleLogoClick}
-              style={{ cursor: 'pointer', filter: pathname === '/contact-us' ? 'invert(1)' : 'none' }}
+              style={{
+                cursor: "pointer",
+                filter: pathname === "/contact-us" ? "invert(1)" : "none",
+              }}
             />
           )}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', lg: 'flex' }, alignItems: 'center', justifyContent: 'center' }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", lg: "flex" },
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             {pages.map((page) => (
               <Button
                 key={page}
                 sx={{
-                  color: 'white',
-                  filter: pathname === '/contact-us' ? 'invert(1)' : 'none',
-                  px: '20px',
-                  borderBottom: currentRoute === page.toUpperCase() ? '2px solid #E41469' : 'none',
-                  fontSize: '16px',
+                  color: "white",
+                  filter: pathname === "/contact-us" ? "invert(1)" : "none",
+                  px: "20px",
+                  borderBottom:
+                    currentRoute === page.toUpperCase()
+                      ? "2px solid #E41469"
+                      : "none",
+                  fontSize: "16px",
                   fontWeight: 400,
-                  borderRadius: '0px',
+                  borderRadius: "0px",
                 }}
                 onClick={() => {
                   handleRouting(page);
@@ -224,19 +247,19 @@ const Header = () => {
             <Button
               variant="contained"
               sx={{
-                display: { xs: 'none', lg: 'block' },
-                padding: '0px',
-                borderRadius: '100px',
-                minWidth: '140px',
-                height: '46px',
-                fontSize: '14px',
-                fontWeight: 'bold',
+                display: { xs: "none", lg: "block" },
+                padding: "0px",
+                borderRadius: "100px",
+                minWidth: "140px",
+                height: "46px",
+                fontSize: "14px",
+                fontWeight: "bold",
               }}
               onClick={handleLetsTalk}
             >
               {translate(`common:header:buttonText`)}
             </Button>
-{/* Language selector button */}
+            {/* Language selector button */}
             {/* <Stack direction="row" alignItems="center" spacing={2}>
               <IconButton
                 onClick={handleOpenUserMenu}
@@ -286,17 +309,17 @@ const Header = () => {
                 ))}
               </Menu>
 
-              <IconButton
-                size="large"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                color="inherit"
-                sx={{ display: { md: 'block', lg: 'none' } }}
-              >
-                <MenuIcon />
-              </IconButton>
-            </Stack> */}
+              </Stack> */}
+            <IconButton
+              size="large"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              color="inherit"
+              sx={{ display: { md: "block", lg: "none" } }}
+            >
+              <MenuIcon />
+            </IconButton>
           </Stack>
         </Stack>
         <Box id="drawer-wrapper">
@@ -309,7 +332,7 @@ const Header = () => {
               keepMounted: true, // Better open performance on mobile.
             }}
             sx={{
-              '& .MuiDrawer-paper': { width: '240px' },
+              "& .MuiDrawer-paper": { width: "240px" },
             }}
           >
             {drawer}
